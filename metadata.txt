@@ -45,7 +45,7 @@ deprecated=False
 # plugin_dependencies=UMEP
 
 Category of the plugin: Raster, Vector, Database or Web
-# category=Vector
+category=Vector
 
 # If the plugin can run on QGIS Server.
 server=False
