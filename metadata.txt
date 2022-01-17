@@ -16,7 +16,7 @@ about= Easy but real physical estimation of ground temperatures to help treat ur
  To work with ICEtool, you will also need UMEP plugin.
  To get started with ICEtool, check that QGIS Processing Toolbox is displayed (CTRL+ALT+T) and read the user manual in the Help menu.
 
-homepage=https://github.com/Art-Ev/ICEtool/issues
+homepage=https://github.com/Art-Ev/ICEtool
 tracker=https://github.com/Art-Ev/ICEtool/issues
 repository=https://github.com/Art-Ev/ICEtool
 # End of mandatory metadata
