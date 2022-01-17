@@ -15,7 +15,7 @@ To get started with ICEtool, ensure that QGIS Processing Toolbox is displayed (C
 ## How to use ICEtool ?
 To learn how to use ICEtool --> [User manual](https://github.com/Art-Ev/ICEtool/blob/main/Scripts/Docs/HOW_TO_english.pdf)<br>
 Pour apprendre à utiliser ICEtool --> [Manuel utilisateur](https://github.com/Art-Ev/ICEtool/blob/main/Scripts/Docs/HOW_TO_french.pdf)<br>
-(ICEtool as been tested on QGIS 3.10, 3.14, 3.16, 3.18, 3.20 and 3.22)
+(ICEtool as been tested and validated on QGIS 3.10, 3.14, 3.16, 3.18, 3.20 and 3.22)
 
 ## What does ICEtool take into account ?
 Ground temperature is an estimation based on :
