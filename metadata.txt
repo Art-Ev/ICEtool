@@ -30,7 +30,6 @@ hasProcessingProvider=yes
 # Tags are comma separated with spaces allowed
 tags=ICU,UHI
 
-homepage=
 category=Analysis
 icon=Icons/icon.png
 # experimental flag
