@@ -219,7 +219,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         day=parameters['day']
         month=parameters['month']
         
-        #ground temperature at 20cm
+        #ground temperature at 20cm [see below line 290]
         Tint=35+273.15
 
         #import all points to process
@@ -286,6 +286,9 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         # Gh(solar incidence) and Tair (Temperature of the air at 10m) are array depending on the hour
 
         # Tint is a float and stands for the Temperature of the ground in K, which is consider constant
+        # instead of calculating its real value considere the mean of the day
+        Tint = (sum(Tair)/len(Tair))+273.15
+        
         # Tskyb is a float and stands for the Temperature of the sky in K , which is consider constant
 
         # alb (albedo), em (emissivity),lambd (thermique conductivity coef in W/m.K),ep (thickness in m),
