@@ -76,7 +76,10 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         alg_params = {
             'INPUT': outputs['InitialGrid']['OUTPUT']
         }
-        outputs['Spatial_index_1'] = processing.run('native:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        if Qgis.QGIS_VERSION_INT>=31600:
+            outputs['Spatial_index_1'] = processing.run('native:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        else:
+            outputs['Spatial_index_1'] = processing.run('qgis:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
         feedback.setCurrentStep(1)
         if feedback.isCanceled():
@@ -99,7 +102,10 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         alg_params = {
             'INPUT': outputs['Intersection']['OUTPUT']
         }
-        outputs['Spatial_index_2'] = processing.run('native:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        if Qgis.QGIS_VERSION_INT>=31600:
+            outputs['Spatial_index_2'] = processing.run('native:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        else:
+            outputs['Spatial_index_2'] = processing.run('qgis:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
         feedback.setCurrentStep(2)
         if feedback.isCanceled():
@@ -148,7 +154,10 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         alg_params = {
             'INPUT': outputs['ComputeY']['OUTPUT']
         }
-        outputs['Spatial_index_3'] = processing.run('native:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        if Qgis.QGIS_VERSION_INT>=31600:
+            outputs['Spatial_index_3'] = processing.run('native:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        else:
+            outputs['Spatial_index_3'] = processing.run('qgis:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
         
         feedback.setCurrentStep(3)
         if feedback.isCanceled():
@@ -172,11 +181,18 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
                     'RASTERCOPY': file.path,
                     'OUTPUT': os.path.join(ProjectPath,'Step_4','Temp',str(h)+'.csv')
                 }
-                outputs['PrleverDesValeursRasters'] = processing.run('native:rastersampling', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+                if Qgis.QGIS_VERSION_INT>=31600:
+                    outputs['PrleverDesValeursRasters'] = processing.run('native:rastersampling', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+                else:
+                    outputs['PrleverDesValeursRasters'] = processing.run('qgis:rastersampling', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
         other_hours=pd.read_csv(last_saved,sep=',')
         # Settings shadow during night, 0
-        other_hours["Shadow1"]=0
+        if Qgis.QGIS_VERSION_INT>=31600:
+            other_hours["Shadow1"]=0
+        else:
+            other_hours["Shadow_1"]=0
+
         for h in range(24):
             if not(h+1 in Shadow_h):
                 # Set shadow to 0 during night
@@ -208,6 +224,8 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
 
         #import all points to process
         Pts_list=pd.read_csv(os.path.join(ProjectPath, 'Step_4', 'ComputedPoints.csv'), sep=',')
+        if Qgis.QGIS_VERSION_INT<31600:
+            Pts_list["Shadow1"]=Pts_list["Shadow_1"]
 
         #aggregate shadow information
         pts_matrix=Pts_list.sort_values(by=["hour"]).groupby(by=["id"]).agg({'id':'first','x':'first','y':'first','Material':'first','alb': 'first', 'em': 'first', 'Cv': 'first', 'lambd': 'first', 'ep': 'first', 'kc': 'first', 'FixedTemp[degC]': 'first', 'Shadow1':list})
