@@ -36,3 +36,11 @@ with:
 
 ## And so, what are the consequences for ICEtool ?
 As a consequence of these shortcomings, ICEtool cannot substitute itself to a real thermal simulation like the one that could be realized with envi-met for example. However, ICEtool is a good solution to easily obtain a good approximation based on a calculation performed on solid scientific basis.
+
+
+## You want to help us with ICEtool but don't know where to start ?
+There is some enhancement ideas posted in issues and maybe you will also find some bug to correct...
+You have absolutely no idea how ICEtool works but you would like to know so you can help? Take a look at our beautiful diagram!
+<p align="center">
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/ICEtool_diagram.png" width="800" title="diagram" />
+</p>
