@@ -43,6 +43,7 @@ from .Scripts.Step2_TreePoints import CreateRastersTreePoints
 from .Scripts.Step2_TreePoly import CreateRastersTreePoly
 from .Scripts.Step4_ComputeTemperatureCSV import ComputeGroundTemperatureCSV
 from .Scripts.Step4_ComputeTemperatureEPW import ComputeGroundTemperatureEPW
+from .Scripts.Step3_UMEPshadows import UMEP_shadows
 
 
 class ICEtoolProvider(QgsProcessingProvider):
@@ -62,6 +63,7 @@ class ICEtoolProvider(QgsProcessingProvider):
         self.addAlgorithm(CreateRastersTreePoly())
         self.addAlgorithm(ComputeGroundTemperatureCSV())
         self.addAlgorithm(ComputeGroundTemperatureEPW())
+        self.addAlgorithm(UMEP_shadows())
 
 
     def id(self):
