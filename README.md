@@ -1,5 +1,5 @@
 # ICEtool
-ICEtool is a QGIS plugin to easily compute ground temperatures in an urban environment. <br>
+ICEtool is an all in one QGIS plugin to easily compute ground temperatures in an urban environment. <br>
 This allows you to make and highlight the urban design choices (e.g. vegetation, materials) that reduce urban heat island phenomena.
 
 This plugin is based on the preliminary work made with [ICE procedure](https://gitlab.com/elioth/ice) (from [Elioth](https://elioth.com/) and [Egis VRM](https://www.egis.fr/activites/villes-0)). In addition to being more user-friendly and fully integrated into a plugin, code has been completely rewritten, algorithms have been optimized and new features have been added. </br>
