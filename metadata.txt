@@ -6,7 +6,7 @@
 name=ICEtool
 qgisMinimumVersion=3.10
 description=Estimation of urban heat island
-version=1.0
+version=1.0.1
 author=Arthur Evrard
 email=arthur.evrard.pro@orange.fr
 
