@@ -6,6 +6,7 @@
  Repository:  https://github.com/Art-Ev/ICEtool
  Created:    2021-11-12 (Arthur Evrard)
  Updated:
+   2022-02-02   Fix Stefan - Boltzman constant
  -----------------------------------------------------------------------------------------------------------
 """
 
@@ -293,7 +294,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
 
         hc=5 # Wind coefficient W.m-2.K-1
 
-        sigma = 5.57e-08 #Stefan - Boltzman constant in W.m-2.K-4
+        sigma = 5.67e-08 #Stefan - Boltzman constant in W.m-2.K-4
 
         simplified["B"]=hc+(simplified["lambd"]/simplified["ep"])+(simplified["Cv"]*simplified["ep"]/3600)
         simplified["C"]=simplified["em"]*sigma
