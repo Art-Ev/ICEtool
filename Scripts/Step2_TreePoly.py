@@ -6,6 +6,7 @@
  Repository:  https://github.com/Art-Ev/ICEtool
  Created:    2021-11-12 (Arthur Evrard)
  Updated:
+    Remove updt height and radius as it's now integrated into the input process
  -----------------------------------------------------------------------------------------------------------
 """
 
@@ -30,40 +31,14 @@ class CreateRastersTreePoly(QgsProcessingAlgorithm):
         self.addParameter(QgsProcessingParameterVectorLayer('Trees', 'Trees', types=[QgsProcessing.TypeVectorPolygon], defaultValue='Trees'))
         self.addParameter(QgsProcessingParameterField('Treeheight', 'Tree_height [m]', type=QgsProcessingParameterField.Numeric, parentLayerParameterName='Trees', allowMultiple=False, defaultValue='Height [m]'))
         self.addParameter(QgsProcessingParameterExtent('Analyseextent', 'Analyse extent', defaultValue=None))
-        param = QgsProcessingParameterNumber('Defaultheight', 'Default building height [m]', type=QgsProcessingParameterNumber.Double, minValue=1, maxValue=750, defaultValue=20)
-        param.setFlags(param.flags() | QgsProcessingParameterDefinition.FlagAdvanced)
-        self.addParameter(param)
-        param = QgsProcessingParameterNumber('Defaulttreeheight', 'Default tree height [m]', type=QgsProcessingParameterNumber.Double, minValue=1, maxValue=200, defaultValue=4)
-        param.setFlags(param.flags() | QgsProcessingParameterDefinition.FlagAdvanced)
-        self.addParameter(param)
 
     def processAlgorithm(self, parameters, context, model_feedback):
         # Use a multi-step feedback, so that individual child algorithm progress reports are adjusted for the
         # overall progress through the model
-        feedback = QgsProcessingMultiStepFeedback(4, model_feedback)
+        feedback = QgsProcessingMultiStepFeedback(2, model_feedback)
         results = {}
         outputs = {}
         ProjectPath=QgsProject.instance().absolutePath()
-
-
-        # Updt_bHeight
-        alg_params = {
-            'FIELD_LENGTH': 0,
-            'FIELD_NAME': parameters['Buildingsheight'],
-            'FIELD_PRECISION': 0,
-            'FIELD_TYPE': 0,  # Flottant
-            'FORMULA': 'if("'+str(parameters['Buildingsheight'])+'">0,"'+str(parameters['Buildingsheight'])+'","'+str(parameters['DefaultBheight'])+'")',
-            'INPUT': parameters['Buildings'],
-            'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
-        }
-        if Qgis.QGIS_VERSION_INT>=31600:
-            outputs['Updt_bheight'] = processing.run('native:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-        else:
-            outputs['Updt_bheight'] = processing.run('qgis:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-
-        feedback.setCurrentStep(1)
-        if feedback.isCanceled():
-            return {}
 
         # Building_raster
         alg_params = {
@@ -74,7 +49,7 @@ class CreateRastersTreePoly(QgsProcessingAlgorithm):
             'FIELD': parameters['Buildingsheight'],
             'HEIGHT': 0.5,
             'INIT': None,
-            'INPUT': outputs['Updt_bheight']['OUTPUT'],
+            'INPUT': parameters['Buildings'],
             'INVERT': False,
             'NODATA': 0,
             'OPTIONS': '',
@@ -85,26 +60,7 @@ class CreateRastersTreePoly(QgsProcessingAlgorithm):
         }
         outputs['Building_raster'] = processing.run('gdal:rasterize', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
-        feedback.setCurrentStep(2)
-        if feedback.isCanceled():
-            return {}
-
-        # Updt_tHeight
-        alg_params = {
-            'FIELD_LENGTH': 0,
-            'FIELD_NAME': parameters['Treeheight'],
-            'FIELD_PRECISION': 0,
-            'FIELD_TYPE': 0,  # Flottant
-            'FORMULA': 'if("'+str(parameters['Treeheight'])+'">0,"'+str(parameters['Treeheight'])+'","'+str(parameters['Defaulttreeheight'])+'")',
-            'INPUT': parameters['Trees'],
-            'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
-        }
-        if Qgis.QGIS_VERSION_INT>=31600:
-            outputs['Updt_theight'] = processing.run('native:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-        else:
-            outputs['Updt_theight'] = processing.run('qgis:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-
-        feedback.setCurrentStep(3)
+        feedback.setCurrentStep(1)
         if feedback.isCanceled():
             return {}
 
@@ -117,7 +73,7 @@ class CreateRastersTreePoly(QgsProcessingAlgorithm):
             'FIELD': parameters['Treeheight'],
             'HEIGHT': 0.5,
             'INIT': None,
-            'INPUT': outputs['Updt_theight']['OUTPUT'],
+            'INPUT': parameters['Trees'],
             'INVERT': False,
             'NODATA': 0,
             'OPTIONS': '',
