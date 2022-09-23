@@ -2,7 +2,7 @@
 ICEtool is an all in one QGIS plugin to easily compute ground temperatures in an urban environment. <br>
 This allows you to make and highlight the urban design choices (e.g. vegetation, materials) that reduce urban heat island phenomena.
 
-This plugin is based on the preliminary work made with [ICE procedure](https://gitlab.com/elioth/ice) (from egis: [Elioth](https://elioth.com/) and [VRM](https://www.egis.fr/activites/villes-0)). In addition to being more user-friendly and fully integrated into a plugin, code has been completely rewritten, algorithms have been optimized and new features have been added. </br>
+This plugin is based on the preliminary work made with [ICE procedure](https://gitlab.com/elioth/ice) (from Egis: [Elioth](https://elioth.com/) and [VRM](https://www.egis.fr/activites/villes-0)). In addition to being more user-friendly and fully integrated into a plugin, code has been completely rewritten, algorithms have been optimized and new features have been added. </br>
 ICEtool includes the shadow generator of [UMEP QGIS plugin](https://github.com/UMEP-dev/UMEP), thanks to UMEP team for all their work ! Check UMEP [here](https://umep-docs.readthedocs.io/en/latest/index.html).
 
 ICEtool sources (for example for material database) are stored just [here](https://github.com/Art-Ev/ICEtool_sources) <br>
