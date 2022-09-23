@@ -1,4 +1,5 @@
-# ICEtool
+# Presentation
+
 ICEtool is an all in one QGIS plugin to easily compute ground temperatures in an urban environment. <br>
 This allows you to make and highlight the urban design choices (e.g. vegetation, materials) that reduce urban heat island phenomena.
 
@@ -57,3 +58,17 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 <img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/ICEtool_diagram.png" width="800" title="diagram" />
 </a>
 </p>
+
+## they support ICEtool (in many ways) and thanks for that!
+<p align="center">
+<a href="https://www.egis-group.com/sectors/cities"><img style="float: right;" src="https://upload.wikimedia.org/wikipedia/fr/5/5b/Logo-egis.gif" width="200" title="Egis" /></a>
+<a href="https://www.insa-toulouse.fr/fr/index.html"><img style="float: right;" src="https://www.insa-toulouse.fr/skins/Insa-v2/resources/img/logo-insa.jpg" width="280" title="INSA_T" /></a>
+<a href="https://wiki.resilience-territoire.ademe.fr/wiki/ICEtool"><img style="float: right;" src="https://www.ademe.fr/wp-content/uploads/2022/06/logoademe2020_rvb.jpg" width="120" title="ADEME" /></a>
+</p>
+
+## And finally, the main contributors:
+- [Arthur Evrard](https://www.linkedin.com/in/artev/)
+- [Stéphanie Maaloug](https://www.linkedin.com/in/stephanie-maalouf/)
+- [Marceau Leymarie](https://www.linkedin.com/in/marceau-leymarie-666b671b5/)
+- [Guillaume Meunier](https://www.linkedin.com/in/meunierguillaume/)
+- [Olivier Ledru](https://www.linkedin.com/in/olivierledru/)
