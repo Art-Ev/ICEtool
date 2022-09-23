@@ -12,6 +12,11 @@ To get started with ICEtool, ensure that QGIS Processing Toolbox is displayed (C
 <img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/INSA_Example_arrows.png" title="example" />
 </p>
 
+ICEtool now with dynamic indicators!
+<p align="center">
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Indicators.PNG" height="60" title="indicators" />
+</p>
+
 ## How to use ICEtool ?
 To learn how to use ICEtool :arrow_right: [User manual](https://github.com/Art-Ev/ICEtool/blob/main/Scripts/Docs/HOW_TO_english.pdf)<br>
 Pour apprendre à utiliser ICEtool :arrow_right: [Manuel utilisateur](https://github.com/Art-Ev/ICEtool/blob/main/Scripts/Docs/HOW_TO_french.pdf)<br>
@@ -29,6 +34,12 @@ with:
 - <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_L" title="QL" /> : Sensitive and latent heat flux of water
 - <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_C" title="QC" /> : Heat flow related to conduction
 - <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}{\delta}Q_S" title="QS" /> : Heat flow related to thermal storage (thermal capacity of materials)
+
+Want to see how ICEtool estimates temperatures inside the soil ? (and understand why Canadian wells are so awesome)
+</a>
+<p align="center">
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/annual_soil_temp.gif" width="250" title="diagram" />
+</p>
 
 ## What is not included in the calculation ?
 - <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_R" title="QR" /> : does not include the radiation from the reflection on building facades
