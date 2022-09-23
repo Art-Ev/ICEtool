@@ -66,7 +66,7 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 <a href="https://wiki.resilience-territoire.ademe.fr/wiki/ICEtool"><img style="float: right;" src="https://www.ademe.fr/wp-content/uploads/2022/06/logoademe2020_rvb.jpg" width="120" title="ADEME" /></a>
 </p>
 
-## And finally, the main contributors:
+## And finally, main contributors:
 - [Arthur Evrard](https://www.linkedin.com/in/artev/)
 - [Stéphanie Maaloug](https://www.linkedin.com/in/stephanie-maalouf/)
 - [Marceau Leymarie](https://www.linkedin.com/in/marceau-leymarie-666b671b5/)
