@@ -14,7 +14,7 @@ To get started with ICEtool, ensure that QGIS Processing Toolbox is displayed (C
 
 ICEtool now with dynamic indicators!
 <p align="center">
-<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Indicators.PNG" height="60" title="indicators" />
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Indicators.PNG" height="85" title="indicators" />
 </p>
 
 ## How to use ICEtool ?
