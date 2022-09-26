@@ -6,13 +6,12 @@
 name=ICEtool
 qgisMinimumVersion=3.10
 description=Estimation of urban heat island
-version=1.0.2
+version=1.4.0
 author=Arthur Evrard
 email=arthur.evrard.pro@orange.fr
 
 about= Easy but real physical estimation of ground temperatures to help treat urban heat islands and create better urban designs.
  ICEtool allows you to make and highlight the urban design choices (e.g. vegetation, materials) that reduce urban heat island phenomena.
- This plugin is based on the preliminary work of ICE procedure (from companies of Egis group).
  ICEtool includes UMEP shadow generator, thanks to all UMEP plugin contributors for all their work!
  To get started with ICEtool, check that QGIS Processing Toolbox is displayed (CTRL+ALT+T) and read the user manual in the Help menu.
 

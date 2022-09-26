@@ -26,7 +26,7 @@
           <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
           <prop v="area" k="scale_method"/>
-          <prop v="4" k="size"/>
+          <prop v="5.6" k="size"/>
           <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="size_unit"/>
           <prop v="1" k="vertical_anchor_point"/>
@@ -55,7 +55,7 @@
           <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
           <prop v="area" k="scale_method"/>
-          <prop v="4" k="size"/>
+          <prop v="5.6" k="size"/>
           <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="size_unit"/>
           <prop v="1" k="vertical_anchor_point"/>
@@ -84,7 +84,7 @@
           <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
           <prop v="area" k="scale_method"/>
-          <prop v="4" k="size"/>
+          <prop v="5.6" k="size"/>
           <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="size_unit"/>
           <prop v="1" k="vertical_anchor_point"/>
@@ -113,7 +113,7 @@
           <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
           <prop v="area" k="scale_method"/>
-          <prop v="4" k="size"/>
+          <prop v="5.6" k="size"/>
           <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="size_unit"/>
           <prop v="1" k="vertical_anchor_point"/>
@@ -142,7 +142,7 @@
           <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
           <prop v="area" k="scale_method"/>
-          <prop v="4" k="size"/>
+          <prop v="5.6" k="size"/>
           <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="size_unit"/>
           <prop v="1" k="vertical_anchor_point"/>
@@ -171,7 +171,7 @@
           <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
           <prop v="area" k="scale_method"/>
-          <prop v="4" k="size"/>
+          <prop v="5.6" k="size"/>
           <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="size_unit"/>
           <prop v="1" k="vertical_anchor_point"/>
@@ -202,7 +202,7 @@
           <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="outline_width_unit"/>
           <prop v="area" k="scale_method"/>
-          <prop v="4" k="size"/>
+          <prop v="5.6" k="size"/>
           <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
           <prop v="RenderMetersInMapUnits" k="size_unit"/>
           <prop v="1" k="vertical_anchor_point"/>

@@ -1,43 +1,128 @@
-ID,name,french_name,color,rugosity_age,FixedTemp[degC],alb,em,Cv,lambd,ep,kc,source,version,comments
-SD1,Quartzite,Quartzite,Beige/brown/black,New/Rough,0,0.26,0.92,1794000.0,5.0,0.2,0.0,LUMA_2013,1.0,
-SD2,Quartzite,Quartzite,Beige/brown/black,New/Rough,0,0.32,0.96,1794000.0,5.0,0.2,0.0,LUMA_2013,1.0,
-SD3,Quartzite,Quartzite,Brown,New/Rough,0,0.25,0.97,1794000.0,5.0,0.2,0.0,LUMA_2013,1.0,
-ST1,Sandstone,Gres,Beige,Used,0,0.4,0.9,1490000.0,3.0,0.2,0.0,LUMA_2013,1.0,
-ST2,Carboniferous coral limestone,Calcaire carbonifere ,Grey,Used,0,0.2,0.94,3835000.0,2.0,0.2,0.0,LUMA_2013,1.0,
-ST3,Sandstone,Gres,Yellow,Used,0,0.26,0.93,1490000.0,3.0,0.2,0.0,LUMA_2013,1.0,
-ST4,Limestone,Roche calcaire,Beige,Used,0,0.68,0.93,3835000.0,2.0,0.2,0.0,LUMA_2013,1.0,
-ST5,Sandstone,Gres,Light grey,Smooth,0,0.46,0.92,1490000.0,3.0,0.2,0.0,LUMA_2013,1.0,
-ST6,Granite,Granit,White/black,rough,0,0.48,0.92,728000.0,2.7,0.2,0.0,LUMA_2013,1.0,
-ST7,Granite with cement,Granit avec ciment,White/red,Weathered,0,0.34,0.93,728000.0,2.7,0.2,0.0,LUMA_2013,1.0,
-ST8,Granite with cement,Granit avec ciment,White/black,Weathered,0,0.41,0.89,728000.0,2.7,0.2,0.0,LUMA_2013,1.0,
-ST9,Granite,Granit,White/red/black,Weathered,0,0.54,0.93,728000.0,2.7,0.2,0.0,LUMA_2013,1.0,
-ST10,Granite,Granit,Red/black,Smooth,0,0.22,0.89,728000.0,2.7,0.2,0.0,LUMA_2013,1.0,
-AS1,Asphalt with stone aggregate,Enrobe bitumineux (granulats et bitume),Black/grey,Weathered,0,0.21,0.96,3220000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-AS2,Asphalt with stone aggregate,Enrobe bitumineux (granulats et bitume),Black/grey,Weathered,0,0.18,0.94,3220000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-AS3,Asphalt with stone aggregate,Enrobe bitumineux (granulats et bitume),Black/grey,Weathered,0,0.21,0.94,3220000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-AS4,Asphalt with stone aggregate,Enrobe bitumineux (granulats et bitume),Black/grey,Weathered,0,0.18,0.94,3220000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-AS5,Asphalt with stone aggregate,Enrobe bitumineux (granulats et bitume),Black/grey,Weathered,0,0.19,0.93,3220000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-AS6,Asphalt with stone aggregate,Enrobe bitumineux (granulats et bitume),Black/grey,Weathered,0,0.12,0.91,3220000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-CM1,Cement,Ciment,Grey/ochre,Weathered,0,0.29,0.94,1680000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-CC1,Light concrete,Beton leger,Grey/white,New,0,0.21,0.92,1839600.0,0.21,0.2,0.0,LUMA_2013,1.0,
-CM2,Cement,Ciment,Grey,Weathered,0,0.23,0.91,1680000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-CC2,Concrete,Beton,Grey,Weathered,0,0.37,0.95,1839600.0,0.21,0.2,0.0,LUMA_2013,1.0,
-CM3,Cement,Ciment,Grey,Weathered,0,0.41,0.95,1680000.0,0.8,0.2,0.0,LUMA_2013,1.0,
-CC3,Concrete,Beton,White,Weathered,0,0.42,0.95,1839600.0,0.21,0.2,0.0,LUMA_2013,1.0,
-CC4,Concrete,Beton,Grey,Weathered,0,0.25,0.95,1839600.0,0.21,0.2,0.0,LUMA_2013,1.0,
-CM4,Cement brick,Module en ciment,Yellow,New,0,0.3,0.94,1680000.0,0.8,0.2,0.0,,1.0,
-CM5,Cement brick with sand,Module en ciment avec sable,Black/light grey,New,0,0.11,0.94,1680000.0,0.8,0.2,0.0,,1.0,
-CM6,Cement brick,Module en ciment,Black,New,0,0.09,0.95,1680000.0,0.8,0.2,0.0,,1.0,
-CM7,Cement brick,Module en ciment,Red,Weathered,0,0.17,0.94,1680000.0,0.8,0.2,0.0,,1.0,
-CM8,Cement brick with sand,Module en ciment avec sable,Black,Weathered,0,0.2,0.89,1680000.0,0.8,0.2,0.0,,1.0,
-CM9,Cement brick,Module en ciment,Light red,New,0,0.22,0.94,1680000.0,0.8,0.2,0.0,,1.0,
-CM10,Cement,Ciment,Red,Weathered,0,0.27,0.95,1680000.0,0.8,0.2,0.0,,1.0,
-MT4,Metal with paint,Metal peint,Copper patina,New,0,0.45,0.94,1680000.0,0.8,0.2,0.0,,1.0,
-MT5,Metal with paint,Metal peint,Slate grey,New,0,0.12,0.94,1760000.0,1.0,0.2,0.0,,1.0,
-VG1,Grass green watered,Gazon vert,Green,-,0,0.27,0.98,1280000.0,0.28,0.2,1.0,Asaeda & Ca, 2000,1.0,
-VG2,Grass dry ,Gazon seche,Yellow,-,0,0.17,0.98,1280000.0,0.28,1.0,0.9,Wechsler and Glaser_1966,1.0,
-WT1,Water small,Eau,-,-,0,0.07,0.95,4171448.0,0.68,0.2,1.05,,1.0,
-VG3,Dense Forest,Foret dense,Green,0,0,0.27,0.98,1280000.0,0.28,0.2,1.3,Asaeda & Ca, 2000,1.0,
-VG4,Tree,Arbre,Green,0,0,0.3,0.98,1280000.0,0.28,1.2,1.0,Wechsler and Glaser_1966,1.0,
-FX1,Fixed temperature material n1,Materiau a temperature fixe n1,-,-,28,0,0,0,0,0,,ExtICU,1.0,
-FX2,Fixed temperature material n2,Materiau a temperature fixe n2,-,-,28,0,0,0,0,0,,ExtICU,1.0,
+ID;name;french_name;color;rugosity_age;FixedTemp[degC];alb;alb_source;em;em_source;Cv;Cv_source;lambd;lambd_source;ep;kc;CR;CR_source;CBS;CBS_source;Artificial;database_version;comments
+AS1;Asphalt with stone aggregate;Asphalte;Black/grey;new;0;0.05;"Mona Hammami (""Ville blanche"") 
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled 
+Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France";0.95;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2251000;;0.74;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+AS2;Asphalt with stone aggregate;Asphalte;Grey/white;new;0;0.4;Variante du matériau;0.95;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2214000;;0.74;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+AS3;Asphalt with stone aggregate;Asphalte;Grey;rough/used;0;0.38;Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France ;0.95;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra
+
+Part principe que l'émissivité est la même";2348300;;0.74;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC1;Cavernous Concrete;Béton caverneux;Grey;rough;0;0.3;"Anthony Vajou 
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";1729000;;2;"Basé sur  béton armé Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com) /
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.2;0;0.7;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC2;Swept finish concrete;Béton finition balayée beige;Beige;;0;0.4;Variante du matériau;0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;2;Basé sur dalle béton Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC3;Swept finish concrete;Béton finition balayée gris clair;Grey/white;;0;0.45;Variante du matériau;0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;2;Basé sur dalle béton Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC4;Desactivated concrete;Béton désactivé ;Grey/dark;;0;0.2;Anthony Vajou ;0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;2;Basé sur dalle béton Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC5;Bitominous mix;Enrobé bitumineux noir;Black/grey;;0;0.15;"Lutte contre les îlots de chaleurs Urbains, 2010, Grand Lyon
+
+Anthony Vajou";0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;2;Basé sur  béton armé : Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC6;Bitominous mix;Enrobé bitumineux rouge/brun;Red;;0;0.31;Variante du matériau;0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;2;Basé sur  béton armé : Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC7;Bitominous mix;Enrobé bitumineux beige/blanc;Beige/white;;0;0.45;Variante du matériau;0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;2;Basé sur  béton armé : Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC8;Concrete Slab;Dalle Béton (beige);Beige/white;;0;0.45;Lutte contre les îlots de chaleurs Urbains, 2010, Grand Lyon;0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;1.65;Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CC9;Concrete Slab;Dalle Béton (gris);Grey/dark;;0;0.25;"Mona Hammami (""Ville blanche"")";0.94;"Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches
+
+Table of Emissivity of various surfaces, Transmetra";2083000;Cenk Tezimel, 2003 _ sciencedirect.com;1.65;Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+CM1;Cement;Ciment;Grey/ochre;Weathered;0;0.29;ICETOOLV1 _ LUMA_2013;0.94;ICETOOLV1 _ LUMA_2013;1680000.0;ICETOOLV1 _ LUMA_2013;0.8;ICETOOLV1 _ LUMA_2013;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM2;Cement;Ciment;Grey;Weathered;0;0.23;ICETOOLV1 _ LUMA_2015;0.91;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM3;Cement;Ciment;Grey;Weathered;0;0.41;ICETOOLV1 _ LUMA_2015;0.95;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM4;Cement brick;Module en ciment;Yellow;New;0;0.3;ICETOOLV1 _ LUMA_2015;0.94;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM5;Cement brick with sand;Module en ciment avec sable;Black/light grey;New;0;0.11;ICETOOLV1 _ LUMA_2015;0.94;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM6;Cement brick;Module en ciment;Black;New;0;0.09;ICETOOLV1 _ LUMA_2015;0.95;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM7;Cement brick;Module en ciment;Red;Weathered;0;0.17;ICETOOLV1 _ LUMA_2015;0.94;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM8;Cement brick with sand;Module en ciment avec sable;Black;Weathered;0;0.2;ICETOOLV1 _ LUMA_2015;0.89;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM9;Cement brick;Module en ciment;Light red;New;0;0.22;ICETOOLV1 _ LUMA_2015;0.94;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+CM10;Cement;Ciment;Red;Weathered;0;0.27;ICETOOLV1 _ LUMA_2013;0.95;ICETOOLV1 _ LUMA_2013;1680000.0;ICETOOLV1 _ LUMA_2013;0.8;ICETOOLV1 _ LUMA_2013;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+GR1;Granite;Granite (gris/noir);Black/grey;;0;0.33;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.96;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2100000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.8;"Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com)
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+GR2;Granite;Granite (Beige);Golden Beige ;;0;0.45;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.96;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2100000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.8;"Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com)
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled
+
+Techno-Science.net : https://www.techno-science.net/glossaire-definition/Masse-volumique-page-2.html";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+GR3;Granite;Granite (rouge/brun);Red;;0;0.25;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.96;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2100000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.8;"Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com)
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled
+
+Techno-Science.net : https://www.techno-science.net/glossaire-definition/Masse-volumique-page-2.html";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+GR4;Granite;Granite (gris/blanc);Grey/white;;0;0.45;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.96;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2100000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.8;"Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com)
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled
+
+Techno-Science.net : https://www.techno-science.net/glossaire-definition/Masse-volumique-page-2.html";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+HC1;Honeycomb coating (grass);Revêtement alvéolaire (herbe);Green&white;;0;0.375;50% valeur albedo beton / 50%valeur albedo gazon;0.96;50% valeur albedo beton / 50%valeur albedo gazon;2098750;;1.14;50% valeur albedo beton / 50%valeur albedo gazon;0.2;0.5;0.6;Wiki Egis;0.5;ADEME & Berlin city (+tree correction);1;2;
+HC2;Honeycomb coating (gravel);Revêtement alvéolaire (gravier);Grey&white;;0;0.27;Anthony Vajou;0.93;50% valeur albedo beton / 50%valeur albedo gravier;1957500;;2;50% valeur albedo beton / 50%valeur albedo gravier;0.2;0;0.6;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);1;2;
+HC3;Honeycomb coating (mostly grass);Revêtement alvéolaire (Majorite herbe);Green;;0;0.29;Anthony Vajou;0.962;30% valeur albedo beton / 70%valeur albedo gazon;2073500;;0.79;30% valeur albedo beton / 70%valeur albedo gazon;0.2;0.7;0.6;Wiki Egis;0.5;ADEME & Berlin city (+tree correction);1;2;
+MT4;Metal with paint;Metal peint;Copper patina;New;0;0.45;ICETOOLV1 _ LUMA_2015;0.94;ICETOOLV1 _ LUMA_2015;1680000.0;ICETOOLV1 _ LUMA_2015;0.8;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+MT5;Metal with paint;Metal peint;Slate grey;New;0;0.12;ICETOOLV1 _ LUMA_2015;0.94;ICETOOLV1 _ LUMA_2015;1760000.0;ICETOOLV1 _ LUMA_2015;1.0;ICETOOLV1 _ LUMA_2015;0.2;0.0;0.95;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;1;
+SD1;Sand dry;Sable sec;Brown;;0;0.18;Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France _ Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.76;Emissivité et longueur d'onde des matériaux, chaleur naturelle;1450000;Cenk Tezimel, 2003 _ sciencedirect.com;0.396;Thermoconcept-SARL;0.2;0;0.3;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);0;2;
+SD2;Sand wet;Sable humide;Brown;;0;0.09;Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France _ Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.76;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2500000;Cenk Tezimel, 2003 _ sciencedirect.com;2.2;Thermoconcept-SARL;0.2;0;0.3;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);0;2;
+SD3;Sand;sable blanc;White;;0;0.55;Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France _ Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.76;Emissivité et longueur d'onde des matériaux, chaleur naturelle;1450000;Cenk Tezimel, 2003 _ sciencedirect.com;0.396;Thermoconcept-SARL;0.2;0;0.3;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);0;2;
+ST1;Sandstone;Grés (beige);Beige;;0;0.45;"Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France / 
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.93;Basé sur valeurs de roches aux propriétés similaires;2050000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.3;"Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com)
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+ST2;Sandstone;Grés (gris);Light grey;;0;0.38;"Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France / 
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.93;Basé sur valeurs de roches aux propriétés similaires;2050000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.3;"Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com)
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled
+";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+ST3;Sandstone;Grés (rouge);Red;;0;0.27;"Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France / 
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.93;Basé sur valeurs de roches aux propriétés similaires;2050000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.3;"Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com)
+
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled
+";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+ST4;Limestone;Calcaire (blanc);White;;0;0.68;"Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France / 
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled /
+Icetool V1 Matweb";0.95;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2106000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.3;Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+ST5;Limestone;Calcaire (gris);Grey;;0;0.2;Base sur couleur sombre;0.95;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2106000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;2.3;Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+ST6;Ceramic ;Céramique (beige);Beige;;0;0.45;Variante du matériau;0.95;Emissivité et longueur d'onde des matériaux, chaleur naturelle;2300000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;1.5;"public.iutenligne.net
+https://material-properties.org/fr/porcelaine-densite-capacite-thermique-conductivite-thermique/";0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+ST7;Porphyry;Porphyre;Dark grey/red;;0;0.12;Research on the Polarization of Light from Planets and from Some Terrestrial Substances, 1964, Lyot;0.94;Basé sur valeurs de roches aux propriétés similaires;2120000;;3.5;Conductivité thermique des materiaux, 2000, CSTB Pompeo Gueret _ energieplus-lesite.be;0.2;0;0.8;Wiki Egis;0;ADEME & Berlin city (+tree correction);1;2;
+ST8;Gravel;Gravier;Grey/black;;0;0.09;Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;0.92;Emissivité et longueur d'onde des matériaux, chaleur naturelle;1500000;Cenk Tezimel, 2003 _ sciencedirect.com;2;Conductivité thermique des materiaux, 2000, CSTB Pompeo Gueret;0.2;0;0.37;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);1;2;
+STS1;Stabilized Sand;Stabilisé;Beige;;0;0.38;Anthony Vajou;0.92;"Même valeurs que gravier
+Emissivité et longueur d'onde des matériaux, chaleur naturelle";2438000;;2;Basé sur sable, gravier et béton : Conductivité thermique des materiaux, 2000, CSTB Pompeo Gueret;0.2;0;0.7;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);1;2;
+STS2;Stabilized Sand with binder;Stabilisé renforcé avec liant;Beige;;0;0.38;Anthony Vajou;0.92;"Même valeurs que gravier
+Emissivité et longueur d'onde des matériaux, chaleur naturelle";2517500;;2;Basé sur sable, gravier et béton : Conductivité thermique des materiaux, 2000, CSTB Pompeo Gueret;0.2;0;0.7;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);1;2;
+STS3;Stabilized Sand ;Stabilisé;Grey;;0;0.35;Anthony Vajou;0.92;"Même valeurs que gravier
+Emissivité et longueur d'onde des matériaux, chaleur naturelle";2438000;;2;Basé sur sable, gravier et béton : Conductivité thermique des materiaux, 2000, CSTB Pompeo Gueret;0.2;0;0.7;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);1;2;
+VG1;Grass green Watered;Gazon vert;Green;;0;0.33;"Anthony Vajou _
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled
+";0.98;Icetool V1 :(Asaeda & Ca, 2000);2500000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;0.28;Energie +;0.2;1;0.2;Wiki Egis;0.8;ADEME & Berlin city (+tree correction);0;2;
+VG2;Grass dry;Gazon sec;Yellow;;0;0.13;Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France;0.91;Icetool V1 : Wechsler and Glaser (1966);2500000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;0.28;Energie +;0.2;0.8;0.2;Wiki Egis;0.8;ADEME & Berlin city (+tree correction);0;2;
+VG3;Dense Deciduous Forest;Forêt décidue;Green;;0;0.15;ines.solaire;0.98;Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches;2500000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;0.19;Thermoconcept-SARL;0.2;1.3;0.1;Wiki Egis;0.8;ADEME & Berlin city (+tree correction);0;2;
+VG4;Dense Coniferous Forest;Forêt conifère;Green;;0;0.1;ines.solaire;0.98;Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches;2500000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;0.13;Thermoconcept-SARL;0.2;1.3;0.1;Wiki Egis;0.8;ADEME & Berlin city (+tree correction);0;2;
+VG5;Sédum carpet;Tapis de sédum;Green/red;;0;0.3;"Anthony Vajou 
+";0.96;Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches;720000;;2;Bruxelle environnement;0.2;0.7;0.5;Wiki Egis;0.5;ADEME & Berlin city (+tree correction);0;2;
+VG6;Wood chips;Copeaux de bois;Brown;;0;0.3;Anthony Vajou;0.91;Proche du bois;52500;;0.06;Picbleu.fr;0.2;0;0.4;Wiki Egis;0.5;ADEME & Berlin city (+tree correction);0;2;
+VG7;Wood;Palette de bois;Brown;;0;0.35;"Anthony Vajou _ Mona Hammami (""Ville blanche"") _ 'Lutte contre les îlots de chaleurs Urbains, 2010, Grand Lyon";0.9;Emissivité et longueur d'onde des matériaux, chaleur naturelle _ Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled;960000;;0.23;Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;0;0.9;Wiki Egis;0.5;ADEME & Berlin city (+tree correction);0;2;
+VG8;Mix of stone and ground;Mélange terre/pierre;Green/brown;;0;0.29;Anthony Vajou;0.98;Basé sur émissivité gazon et sol nu;2140000;;0.5574;60% pierre minérale et 40% terre organique;0.2;0;0.5;Wiki Egis;0.5;ADEME & Berlin city (+tree correction);0;2;
+VG9;Mineral bare soil;Sol nu minérale / Terre fortement desseche;Brown;;0;0.29;Anthony Vajou;0.98;Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches (hypothèse même émissivité pour tous les matériaux naturels);1900000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;0.321;Thermoconcept-SARL;0.2;0;0.7;Wiki Egis;0.3;ADEME & Berlin city (+tree correction);0;2;
+VG10;Organic bare soil;Sol nu organique;Brown;;0;0.25;"Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France _ 
+Indicateurs pour l'analyse de la contribution d'un projet urbain à l'îlot de chaleur, 2010, Khaled";0.98;Quantifying how landscape composition and configuration affect urban land surface temperatures using machine learning and neutral landscapes, 2019, Osborne Alvares-Sanches (hypothèse même émissivité pour tous les matériaux naturels);2500000;Thermal Properties of representative soils of the Czech Republic, 2013, Kodesova;0.912;Thermoconcept-SARL;0.2;0;0.4;Wiki Egis;0.5;ADEME & Berlin city (+tree correction);0;2;
+WT1;Water;Eau;Blue;;0;0.06;Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France;0.96;Emissivité et longueur d'onde des matériaux, chaleur naturelle;4186000;Cenk Tezimel, 2003 _ sciencedirect.com;0.66;Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;1;1;SNC-Lavalin, Amiens Metropole, 2016, Projet de construction d'un dépôt de bus;1;ADEME & Berlin city (+tree correction);0;2;
+WT2;Artificial water (fountain);Fontaine;Blue;;0;0.06;Guide de recommendation pour lutter contre l'effet d'îlot de chaleur urbain à destination des collectivités territoriales, 2012, Ademe, Ile de France;0.96;Emissivité et longueur d'onde des matériaux, chaleur naturelle;4186001;Cenk Tezimel, 2003 _ sciencedirect.com;0.66;Masse Volumique et conductivité thermique des principaux matériaux de construction, Espace pour Ingenieur (EPI.com);0.2;1;1;SNC-Lavalin, Amiens Metropole, 2016, Projet de construction d'un dépôt de bus;0.5;ADEME & Berlin city (+tree correction);1;2;
+FX1;Fixed temperature material n1;Materiau a temperature fixe n1;-;-;28;0;NC;0;NC;0;NC;0;NC;0;0;1;User;0.5;User;1;1;
+FX2;Fixed temperature material n2;Materiau a temperature fixe n2;-;-;28;0;NC;0;NC;0;NC;0;NC;0;0;1;User;0.5;User;1;1;
