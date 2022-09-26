@@ -68,7 +68,7 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 
 ## And finally, main contributors:
 - [Arthur Evrard](https://www.linkedin.com/in/artev/)
-- [Stéphanie Maaloug](https://www.linkedin.com/in/stephanie-maalouf/)
+- [Stéphanie Maalouf](https://www.linkedin.com/in/stephanie-maalouf/)
 - [Marceau Leymarie](https://www.linkedin.com/in/marceau-leymarie-666b671b5/)
 - [Guillaume Meunier](https://www.linkedin.com/in/meunierguillaume/)
 - [Olivier Ledru](https://www.linkedin.com/in/olivierledru/)
