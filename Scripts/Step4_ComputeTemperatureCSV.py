@@ -384,7 +384,6 @@ class ComputeGroundTemperatureCSV(QgsProcessingAlgorithm):
             Sc= 0.1645*np.sin(2*b)-0.1255*np.cos(b)-0.025*np.sin(b)
             for i in range(0,24):
                 Tmean=Tair[i]-273.3
-                print(Tmean)
                 Rs=Gh[i]*0.0036
                 Rns=(1-alb)*Rs
                 delta=4098*(0.6108*np.e**(17.27*Tmean/(Tmean+237.3)))/(Tmean+237.3)**2
@@ -494,7 +493,6 @@ class ComputeGroundTemperatureCSV(QgsProcessingAlgorithm):
                     if count >= 2:
                         error=abs(Temp_DegC[23]-T0)
                         if error < threshold:
-                            feedback.pushInfo('Equilibrium reached after: '+str(count)+' iterations')
                             equilibrium=True
                         elif count==25:
                             feedback.pushInfo('Equilibrium failed after 25 iterations for point :'+str(id))
