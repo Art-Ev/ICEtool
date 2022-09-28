@@ -39,7 +39,9 @@ with:
 Want to see how ICEtool estimates temperatures inside the soil ? (and understand why Canadian wells are so awesome)
 </a>
 <p align="center">
+<a href="https://www.cableizer.com/blog/post/soil-temperature-calculator/">
 <img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/annual_soil_temp.gif" width="250" title="diagram" />
+</a>
 </p>
 
 ## What is not included in the calculation ?
