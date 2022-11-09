@@ -32,11 +32,11 @@ Ground temperature is an estimation based on :
 </p>
 
 with:
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_R" title="QR" /> : Heat flux related to radiation (from the sun, infrared radiation and the atmosphere)
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_H" title="QH" /> : Heat flux related to convection (considered as very low and homogeneous)
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_L" title="QL" /> : Sensitive and latent heat flux of water
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_C" title="QC" /> : Heat flow related to conduction
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}{\delta}Q_S" title="QS" /> : Heat flow related to thermal storage (thermal capacity of materials)
+- $Q_R$ : Heat flux related to radiation (from the sun, infrared radiation and the atmosphere)
+- $Q_H$ : Heat flux related to convection (considered as very low and homogeneous)
+- $Q_L$ : Sensitive and latent heat flux of water
+- $Q_C$ : Heat flow related to conduction
+- ${\delta}Q_S$ : Heat flow related to thermal storage (thermal capacity of materials)
 
 Want to see how ICEtool estimates temperatures inside the soil ? (and understand why Canadian wells are so awesome)
 </a>
@@ -47,8 +47,8 @@ Want to see how ICEtool estimates temperatures inside the soil ? (and understand
 </p>
 
 ## What is not included in the calculation ?
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_R" title="QR" /> : does not include the radiation from the reflection on building facades
-- <img src="https://latex.codecogs.com/svg.latex?\Large&space;\pagecolor{white}Q_H" title="QH" /> : The anthropogenic heat flux is not calculated, so neither the heat release from cars nor from air conditioners is evaluated.
+- $Q_R$ : does not include the radiation from the reflection on building facades
+- $Q_H$ : The anthropogenic heat flux is not calculated, so neither the heat release from cars nor from air conditioners is evaluated.
 
 ## And so, what are the consequences for ICEtool ?
 As a consequence of these shortcomings, ICEtool cannot substitute itself to a real thermal simulation like the one that could be realized with envi-met for example. However, ICEtool is a good solution to easily obtain a good approximation based on a calculation performed on solid scientific basis.
