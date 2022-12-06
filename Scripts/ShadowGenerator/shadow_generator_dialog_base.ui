@@ -407,13 +407,6 @@ p, li { white-space: pre-wrap; }
     </widget>
    </item>
    <item row="9" column="6">
-    <widget class="QPushButton" name="pushButtonSave">
-     <property name="text">
-      <string>Select</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="6">
     <widget class="QPushButton" name="runButton">
      <property name="cursor">
       <cursorShape>ArrowCursor</cursorShape>
@@ -423,7 +416,7 @@ p, li { white-space: pre-wrap; }
      </property>
     </widget>
    </item>
-   <item row="11" column="6">
+   <item row="10" column="6">
     <widget class="QPushButton" name="pushButton">
      <property name="text">
       <string>Close</string>
@@ -433,24 +426,14 @@ p, li { white-space: pre-wrap; }
    <item row="9" column="2" colspan="4">
     <widget class="QLineEdit" name="textOutput"/>
    </item>
-   <item row="11" column="0">
+   <item row="10" column="0">
     <widget class="QPushButton" name="pushButtonHelp">
      <property name="text">
       <string>Help</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="0" colspan="2">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Output folder:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="0" colspan="6">
+   <item row="9" column="0" colspan="6">
     <widget class="QProgressBar" name="progressBar">
      <property name="value">
       <number>0</number>
@@ -460,7 +443,7 @@ p, li { white-space: pre-wrap; }
      </property>
     </widget>
    </item>
-   <item row="11" column="1" colspan="2">
+   <item row="10" column="1" colspan="2">
     <widget class="QCheckBox" name="checkBoxIntoCanvas">
      <property name="enabled">
       <bool>false</bool>

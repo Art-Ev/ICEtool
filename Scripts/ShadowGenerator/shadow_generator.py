@@ -28,6 +28,7 @@ from qgis.PyQt.QtWidgets import QAction, QFileDialog, QMessageBox
 from qgis.PyQt.QtGui import QIcon
 from qgis.gui import QgsMapLayerComboBox
 from qgis.core import QgsMapLayerProxyModel
+from qgis.core import QgsProject
 # Initialize Qt resources from file resources.py
 # from . import resources_rc
 # Import the code for the dialog
@@ -74,7 +75,6 @@ class ShadowGenerator(object):
         self.dlg.runButton.clicked.connect(self.start_progress)
         self.dlg.shadowCheckBox.stateChanged.connect(self.checkbox_changed)
         self.dlg.pushButtonHelp.clicked.connect(self.help)
-        self.dlg.pushButtonSave.clicked.connect(self.folder_path)
         self.fileDialog = QFileDialog()
         # self.fileDialog.setFileMode(4)
         # self.fileDialog.setAcceptMode(1)
@@ -87,7 +87,9 @@ class ShadowGenerator(object):
         # TODO: We are going to let the user set this up in a future iteration
         # self.toolbar = self.iface.addToolBar(u'ShadowGenerator')
         # self.toolbar.setObjectName(u'ShadowGenerator')
-        self.folderPath = 'None'
+        
+        ProjectPath=QgsProject.instance().absolutePath()
+        folderPath = os.path.join(ProjectPath,'Step_3')
         self.timeInterval = 30
 
         # self.layerComboManagerDSM = RasterLayerCombo(self.dlg.comboBox_dsm)
@@ -224,13 +226,6 @@ class ShadowGenerator(object):
                 action)
             self.iface.removeToolBarIcon(action)
 
-    def folder_path(self):
-        self.fileDialog.open()
-        result = self.fileDialog.exec_()
-        if result == 1:
-            self.folderPath = self.fileDialog.selectedFiles()
-            self.dlg.textOutput.setText(self.folderPath[0])
-
     def checkbox_changed(self):
         if self.dlg.shadowCheckBox.isChecked():
             self.dlg.timeEdit.setEnabled(True)
@@ -243,12 +238,10 @@ class ShadowGenerator(object):
             dst = 1
         else:
             dst = 0
-
-        if self.folderPath == 'None':
-            QMessageBox.critical(None, "Error", "Select a valid output folder")
-            return
-
-        self.dlg.textOutput.setText(self.folderPath[0])
+        
+        ProjectPath=QgsProject.instance().absolutePath()
+        folderPath = os.path.join(ProjectPath,'Step_3')
+        self.dlg.textOutput.setText(folderPath)
         dsmlayer = self.layerComboManagerDSM.currentLayer()
 
         if dsmlayer is None:
@@ -399,7 +392,7 @@ class ShadowGenerator(object):
             wheight = 0
             waspect = 0
 
-        if self.folderPath is 'None':
+        if folderPath is 'None':
             QMessageBox.critical(None, "Error", "No selected folder")
             return
         else:
@@ -424,7 +417,7 @@ class ShadowGenerator(object):
             intervalTime = self.dlg.intervalTimeEdit.time()
             self.timeInterval = intervalTime.minute() + (intervalTime.hour() * 60) + (intervalTime.second()/60)
             shadowresult = dsh.dailyshading(dsm, vegdsm, vegdsm2, scale, lon, lat, sizex, sizey, tv, UTC, usevegdem,
-                                       self.timeInterval, onetime, self.dlg, self.folderPath[0], gdal_dsm, trans, 
+                                       self.timeInterval, onetime, self.dlg, folderPath, gdal_dsm, trans, 
                                        dst, wallsh, wheight, waspect)
 
             shfinal = shadowresult["shfinal"]
@@ -432,12 +425,12 @@ class ShadowGenerator(object):
 
             if onetime == 0:
                 timestr = time_vector.strftime("%Y%m%d")
-                savestr = '/shadow_fraction_on_'
+                savestr = 'shadow_fraction_on_'
             else:
                 timestr = time_vector.strftime("%Y%m%d_%H%M")
-                savestr = '/Shadow_at_'
+                savestr = 'Shadow_at_'
 
-        filename = self.folderPath[0] + savestr + timestr + '.tif'
+        filename = os.path.join(folderPath, savestr + timestr + '.tif')
 
         dsh.saveraster(gdal_dsm, filename, shfinal)
 
