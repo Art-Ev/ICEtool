@@ -441,8 +441,8 @@ class ShadowGenerator(object):
 
         dsh.saveraster(gdal_dsm, filename, shfinal)
 
-        QMessageBox.information(None, "ShadowGenerator", "Shadow grid(s) successfully generated")
-        # self.iface.messageBar().pushMessage("ShadowGenerator", "Shadow grid(s) successfully generated")
+        #QMessageBox.information(None, "ShadowGenerator", "Shadow grid(s) successfully generated")
+        self.iface.messageBar().pushMessage("ShadowGenerator", "Shadow grid(s) successfully generated")
 
         # load result into canvas
         if self.dlg.checkBoxIntoCanvas.isChecked():
