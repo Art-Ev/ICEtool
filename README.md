@@ -66,7 +66,7 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 ## they support ICEtool (in many ways) and thanks for that!
 <p align="center">
 <a href="https://www.egis-group.com/sectors/cities"><img style="float: right;" src="https://upload.wikimedia.org/wikipedia/fr/5/5b/Logo-egis.gif" width="200" title="Egis" /></a>
-<a href="https://www.insa-toulouse.fr/fr/index.html"><img style="float: right;" src="https://www.insa-toulouse.fr/skins/Insa-v2/resources/img/logo-insa.jpg" width="280" title="INSA_T" /></a>
+<a href="https://www.insa-toulouse.fr/fr/index.html"><img style="float: right;" src="https://www.insa-toulouse.fr/wp-content/uploads/2022/10/Logo_INSAvilletoulouse-RVB-HD.png" width="180" title="INSA_T" /></a>
 <a href="https://wiki.resilience-territoire.ademe.fr/wiki/ICEtool"><img style="float: right;" src="https://www.ademe.fr/wp-content/uploads/2022/06/logoademe2020_rvb.jpg" width="120" title="ADEME" /></a>
 </p>
 
