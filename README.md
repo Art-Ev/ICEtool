@@ -74,5 +74,6 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 - [Arthur Evrard](https://www.linkedin.com/in/artev/)
 - [Stéphanie Maalouf](https://www.linkedin.com/in/stephanie-maalouf/)
 - [Marceau Leymarie](https://www.linkedin.com/in/marceau-leymarie-666b671b5/)
+- [Florian Guelfi](https://www.linkedin.com/in/florian-guelfi-865404bb/)
 - [Guillaume Meunier](https://www.linkedin.com/in/meunierguillaume/)
 - [Olivier Ledru](https://www.linkedin.com/in/olivierledru/)
