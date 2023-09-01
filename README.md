@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/ICEtool_GardenCity.png" height="185" title="example" />
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/ICEtool_GardenCity.png" width="650" height="170" title="example" />
 </p>
 
 # Presentation
