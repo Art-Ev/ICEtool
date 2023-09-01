@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/ICEtool_GardenCity.png" width="650" height="170" title="example" />
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Main_repo_resources/ICEtool_GardenCity.png" width="650" height="170" title="example" />
 </p>
 
 # Presentation
@@ -16,12 +16,12 @@ ICEtool sources (for example for material database) are stored just [here](https
 To get started with ICEtool, ensure that QGIS Processing Toolbox is displayed (CTRL+ALT+T) and read the user manual in the Help menu of ICEtool.
 
 <p align="center">
-<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/INSA_Example_arrows.png" title="example" />
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Main_repo_resources/INSA_Example_arrows.png" title="example" />
 </p>
 
 ICEtool now with dynamic indicators!
 <p align="center">
-<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Indicators.PNG" height="85" title="indicators" />
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Main_repo_resources/Indicators.PNG" height="85" title="indicators" />
 </p>
 
 ## How to use ICEtool ?
@@ -46,7 +46,7 @@ Want to see how ICEtool estimates temperatures inside the soil ? (and understand
 </a>
 <p align="center">
 <a href="https://www.cableizer.com/blog/post/soil-temperature-calculator/">
-<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/annual_soil_temp.gif" width="250" title="diagram" />
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Main_repo_resources/annual_soil_temp.gif" width="250" title="diagram" />
 </a>
 </p>
 
@@ -62,8 +62,8 @@ As a consequence of these shortcomings, ICEtool cannot substitute itself to a re
 There is some enhancement ideas posted in issues and maybe you will also find some bug to correct...
 You have absolutely no idea how ICEtool works but you would like to know so you can help? Take a look at our beautiful diagram! (clic on it to discover the interactive version)
 <p align="center">
-<a href="https://refined-github-html-preview.kidonng.workers.dev/Art-Ev/ICEtool_sources/raw/main/ICEtool_diagram.html">
-<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/ICEtool_diagram.png" width="800" title="diagram" />
+<a href="https://refined-github-html-preview.kidonng.workers.dev/Art-Ev/ICEtool_sources/raw/main/Main_repo_resources/ICEtool_diagram.html">
+<img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Main_repo_resources/ICEtool_diagram.png" width="800" title="diagram" />
 </a>
 </p>
 
