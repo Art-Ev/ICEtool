@@ -252,7 +252,7 @@ class ShadowGenerator(object):
         filepath_dsm = str(provider.dataSourceUri())
 
         gdal_dsm = gdal.Open(filepath_dsm)
-        dsm = gdal_dsm.ReadAsArray().astype(np.float)
+        dsm = gdal_dsm.ReadAsArray().astype(np.float64)
 
         # response to issue #85
         nd = gdal_dsm.GetRasterBand(1).GetNoDataValue()
@@ -319,7 +319,7 @@ class ShadowGenerator(object):
             provider = vegdsm.dataProvider()
             filePathOld = str(provider.dataSourceUri())
             dataSet = gdal.Open(filePathOld)
-            vegdsm = dataSet.ReadAsArray().astype(np.float)
+            vegdsm = dataSet.ReadAsArray().astype(np.float64)
 
             vegsizex = vegdsm.shape[0]
             vegsizey = vegdsm.shape[1]
@@ -340,7 +340,7 @@ class ShadowGenerator(object):
                 provider = vegdsm2.dataProvider()
                 filePathOld = str(provider.dataSourceUri())
                 dataSet = gdal.Open(filePathOld)
-                vegdsm2 = dataSet.ReadAsArray().astype(np.float)
+                vegdsm2 = dataSet.ReadAsArray().astype(np.float64)
             else:
                 trunkratio = self.dlg.spinBoxTrunkHeight.value() / 100.0
                 vegdsm2 = vegdsm * trunkratio
@@ -366,7 +366,7 @@ class ShadowGenerator(object):
             provider = whlayer.dataProvider()
             filepath_wh= str(provider.dataSourceUri())
             self.gdal_wh = gdal.Open(filepath_wh)
-            wheight = self.gdal_wh.ReadAsArray().astype(np.float)
+            wheight = self.gdal_wh.ReadAsArray().astype(np.float64)
             vhsizex = wheight.shape[0]
             vhsizey = wheight.shape[1]
             if not (vhsizex == sizex) & (vhsizey == sizey):  # &
@@ -381,7 +381,7 @@ class ShadowGenerator(object):
             provider = walayer.dataProvider()
             filepath_wa= str(provider.dataSourceUri())
             self.gdal_wa = gdal.Open(filepath_wa)
-            waspect = self.gdal_wa.ReadAsArray().astype(np.float)
+            waspect = self.gdal_wa.ReadAsArray().astype(np.float64)
             vasizex = waspect.shape[0]
             vasizey = waspect.shape[1]
             if not (vasizex == sizex) & (vasizey == sizey):
