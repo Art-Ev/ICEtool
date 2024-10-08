@@ -2,6 +2,12 @@
 <img src="https://github.com/Art-Ev/ICEtool_sources/blob/main/Main_repo_resources/ICEtool_GardenCity.png" width="650" height="170" title="example" />
 </p>
 
+<p align="center">
+<a href=""><img src="https://img.shields.io/badge/version-1.4.1-blue" /></a>
+<a href=""><img src="https://img.shields.io/badge/project-experimental-yellow" /></a>
+<a href="https://github.com/Art-Ev/ICEtool/blob/main/LICENSE"> <img src="https://img.shields.io/badge/licence-GPL 3.0-green" /></a>
+</p>
+
 # Presentation
 
 ICEtool is an all in one QGIS plugin to easily compute ground temperatures in an urban environment. <br>
