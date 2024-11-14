@@ -152,7 +152,7 @@ def shadowingfunction_20(a, vegdem, vegdem2, azimuth, altitude, scale, amaxvalue
     # main loop
     while (amaxvalue >= dz) and (np.abs(dx) < sizex) and (np.abs(dy) < sizey):
         if forsvf == 0:
-            dlg.progressBar.setValue(index)
+            dlg.progressBar.setValue(int(index))
         if ((pibyfour <= azimuth) and (azimuth < threetimespibyfour) or (fivetimespibyfour <= azimuth) and (azimuth < seventimespibyfour)):
             dy = signsinazimuth * index
             dx = -1. * signcosazimuth * np.abs(np.round(index / tanazimuth))
