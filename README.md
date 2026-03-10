@@ -76,14 +76,19 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 ## they support ICEtool (in many ways) and thanks for that!
 <p align="center">
 <a href="https://www.egis-group.com/sectors/cities"><img style="float: right;" src="https://upload.wikimedia.org/wikipedia/fr/5/5b/Logo-egis.gif" width="200" title="Egis" /></a>
-<a href="https://www.insa-toulouse.fr/fr/index.html"><img style="float: right;" src="https://www.insa-toulouse.fr/wp-content/uploads/2022/10/Logo_INSAvilletoulouse-RVB-HD.png" width="180" title="INSA_T" /></a>
+<a href="https://www.insa-toulouse.fr/fr/index.html"><img style="float: right;" src="https://www.insa-toulouse.fr/wp-content/uploads/2022/10/Logo_INSAvilletoulouse-RVB-HD.png" width="140" title="INSA_T" /></a>
+<a href="https://www.lab-lmdc.fr/"><img style="float: right;" src="https://www.lab-lmdc.fr/wp-content/uploads/2021/06/logo-lmdc-2021-1024x469.png" width="180" title="LMDC" /></a>
 <a href="https://wiki.resilience-territoire.ademe.fr/wiki/ICEtool"><img style="float: right;" src="https://www.ademe.fr/wp-content/uploads/2022/06/logoademe2020_rvb.jpg" width="120" title="ADEME" /></a>
+<a href="https://www.nouvelle-aquitaine.fr/"><img style="float: right;" src="https://www.nouvelle-aquitaine.fr/themes/custom/naq_instit/img/logo-naq.svg" width="120" title="R_NA" /></a>
 </p>
 
 ## And finally, main contributors:
 - [Arthur Evrard](https://www.linkedin.com/in/artev/)
+- [Marie Toubin](https://www.linkedin.com/in/marie-toubin-5259b188/)
+- [Antoine Derveaux](https://www.linkedin.com/in/antoine-derveaux-512174151/)
 - [Stéphanie Maalouf](https://www.linkedin.com/in/stephanie-maalouf/)
 - [Marceau Leymarie](https://www.linkedin.com/in/marceau-leymarie-666b671b5/)
 - [Florian Guelfi](https://www.linkedin.com/in/florian-guelfi-865404bb/)
 - [Guillaume Meunier](https://www.linkedin.com/in/meunierguillaume/)
 - [Olivier Ledru](https://www.linkedin.com/in/olivierledru/)
+
