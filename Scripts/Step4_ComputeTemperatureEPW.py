@@ -21,13 +21,15 @@ from qgis.core import QgsProcessingParameterDefinition
 from qgis.core import QgsProcessingParameterFile
 from qgis.core import QgsProcessingContext
 from qgis.core import QgsProcessingParameterEnum
+from qgis.core import QgsProcessingUtils
 from qgis.core import QgsProject
 from qgis.core import Qgis
 from qgis.core import QgsVectorLayer
+from osgeo import gdal
 import processing
 import time
 import sys
-import os
+import glob, os
 import statistics
 import pandas as pd
 from scipy import optimize
@@ -80,10 +82,10 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
             'CRS': parameters['grounddescriptionlayer'],
             'EXTENT': parameters['grounddescriptionlayer'],
             'HOVERLAY': 0,
-            'HSPACING': str(4/parameters['spatialaccuracy']),
+            'HSPACING': str(2/parameters['spatialaccuracy']),
             'TYPE': 0,  # Point
             'VOVERLAY': 0,
-            'VSPACING': str(4/parameters['spatialaccuracy']),
+            'VSPACING': str(2/parameters['spatialaccuracy']),
             'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
         }
         outputs['InitialGrid'] = processing.run('native:creategrid', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
@@ -107,13 +109,15 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         # Intersection
         alg_params = {
             'INPUT': outputs['Spatial_index_1']['OUTPUT'],
-            'INPUT_FIELDS': ['id'],
-            'OVERLAY': parameters['grounddescriptionlayer'],
-            'OVERLAY_FIELDS': ['Material','alb','em','Cv','lambd','ep','kc','FixedTemp[degC]'],
-            'OVERLAY_FIELDS_PREFIX': '',
+            'JOIN': parameters['grounddescriptionlayer'],
+            'JOIN_FIELDS': ['Material','alb','em','Cv','lambd','ep','kc','FixedTemp[degC]'],
+            'PREDICATE': [0],
+            'METHOD': 1,
+            'DISCARD_NONMATCHING': True,
+            'PREFIX': '',
             'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
         }
-        outputs['Intersection'] = processing.run('native:intersection', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        outputs['Intersection'] = processing.run('native:joinattributesbylocation', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
         # Spatial_index_2
         alg_params = {
@@ -146,75 +150,22 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         else:
             outputs['Spatial_index_3'] = processing.run('qgis:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
-        # Compute x
+        # Compute x, y, long, lat
         alg_params = {
             'FIELD_LENGTH': 0,
-            'FIELD_NAME': 'x',
+            'FIELD_NAME': 'coords',
             'FIELD_PRECISION': 0,
-            'FIELD_TYPE': 0,  # Flottant
-            'FORMULA': 'x($geometry)',
+            'FIELD_TYPE': 2,
+            'FORMULA': f"x($geometry)||';'||y($geometry)||';'||x(transform($geometry,'{SCR}','EPSG:4326'))||';'||y(transform($geometry,'{SCR}','EPSG:4326'))",
             'INPUT': outputs['ExtraireParLocalisation']['OUTPUT'],
             'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
         }
         if Qgis.QGIS_VERSION_INT>=31600:
-            outputs['ComputeX'] = processing.run('native:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+            outputs['ComputeCoords'] = processing.run('native:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
         else:
-            outputs['ComputeX'] = processing.run('qgis:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+            outputs['ComputeCoords'] = processing.run('qgis:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
-        # Compute y
-        alg_params = {
-            'FIELD_LENGTH': 0,
-            'FIELD_NAME': 'y',
-            'FIELD_PRECISION': 0,
-            'FIELD_TYPE': 0,  # Flottant
-            'FORMULA': 'y($geometry)',
-            'INPUT': outputs['ComputeX']['OUTPUT'],
-            'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
-        }
-        if Qgis.QGIS_VERSION_INT>=31600:
-            outputs['ComputeY'] = processing.run('native:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-        else:
-            outputs['ComputeY'] = processing.run('qgis:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
 
-        # Compute Long
-        alg_params = {
-            'FIELD_LENGTH': 0,
-            'FIELD_NAME': 'Long',
-            'FIELD_PRECISION': 0,
-            'FIELD_TYPE': 0,  # Flottant
-            'FORMULA': 'x(transform($geometry,\''+SCR+'\',\'EPSG:4326\'))',
-            'INPUT': outputs['ComputeY']['OUTPUT'],
-            'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
-        }
-        if Qgis.QGIS_VERSION_INT>=31600:
-            outputs['ComputeLong'] = processing.run('native:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-        else:
-            outputs['ComputeLong'] = processing.run('qgis:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-            
-        # Compute Lat
-        alg_params = {
-            'FIELD_LENGTH': 0,
-            'FIELD_NAME': 'Lat',
-            'FIELD_PRECISION': 0,
-            'FIELD_TYPE': 0,  # Flottant
-            'FORMULA': 'y(transform($geometry,\''+SCR+'\',\'EPSG:4326\'))',
-            'INPUT': outputs['ComputeLong']['OUTPUT'],
-            'OUTPUT': QgsProcessing.TEMPORARY_OUTPUT
-        }
-        if Qgis.QGIS_VERSION_INT>=31600:
-            outputs['ComputeLat'] = processing.run('native:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-        else:
-            outputs['ComputeLat'] = processing.run('qgis:fieldcalculator', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-
-        # Spatial_index_4
-        alg_params = {
-            'INPUT': outputs['ComputeLat']['OUTPUT']
-        }
-        if Qgis.QGIS_VERSION_INT>=31600:
-            outputs['Spatial_index_4'] = processing.run('native:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-        else:
-            outputs['Spatial_index_4'] = processing.run('qgis:createspatialindex', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-        
         feedback.setCurrentStep(3)
         if feedback.isCanceled():
             return {}
@@ -223,64 +174,63 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         feedback.pushInfo('Retrieving shadow information from rasters')
         
         # Get shadow values for each hour
-        Shadow_h=[]
-        for file in os.scandir(os.path.join(ProjectPath,'Step_3')):
-            if (file.path.endswith(".tif")) and 'fraction_on' not in os.path.basename(file.path):
-                h=int(os.path.basename(file.path).split("_")[2][:2])
-                Shadow_h.append(h)
-                
-                # Extract raster values
-                last_saved=os.path.join(ProjectPath,'Step_4','Temp',str(h)+'.csv')
-                alg_params = {
-                    'COLUMN_PREFIX': 'Shadow',
-                    'INPUT': outputs['Spatial_index_4']['OUTPUT'],
-                    'RASTERCOPY': file.path,
-                    'OUTPUT': os.path.join(ProjectPath,'Step_4','Temp',str(h)+'.csv')
-                }
-                if Qgis.QGIS_VERSION_INT>=31600:
-                    outputs['PrleverDesValeursRasters'] = processing.run('native:rastersampling', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
-                else:
-                    outputs['PrleverDesValeursRasters'] = processing.run('qgis:rastersampling', alg_params, context=context, feedback=feedback, is_child_algorithm=True)
+        pts_layer = QgsProcessingUtils.mapLayerFromString(outputs['ComputeCoords']['OUTPUT'], context)
+        base_fields = ['id', 'Material', 'alb', 'em', 'Cv',
+                       'lambd', 'ep', 'kc', 'FixedTemp[degC]', 'coords']
+        records = [[feat[f] for f in base_fields] for feat in pts_layer.getFeatures()]
+        pts_matrix = pd.DataFrame(records, columns=base_fields)
+        pts_matrix = pts_matrix.drop_duplicates(subset='id', keep='first')
         
-        other_hours=pd.read_csv(last_saved,sep=',')
-        # Settings shadow during night, 0
-        if Qgis.QGIS_VERSION_INT>=31600:
-            other_hours["Shadow1"]=0
-        else:
-            other_hours["Shadow_1"]=0
+        numeric_fields = ['alb', 'em', 'Cv', 'lambd', 'ep', 'kc', 'FixedTemp[degC]']
+        pts_matrix[numeric_fields] = pts_matrix[numeric_fields].apply(pd.to_numeric, errors='coerce')
+        pts_matrix['FixedTemp[degC]'] = pts_matrix['FixedTemp[degC]'].fillna(0)
+        pts_matrix['id'] = pd.to_numeric(pts_matrix['id'], errors='coerce').astype(int)
         
-        for h in range(24):
-            if not(h+1 in Shadow_h):
-                # Set shadow to 0 during night
-                other_hours.to_csv(os.path.join(ProjectPath, 'Step_4', 'Temp',str(h+1)+'.csv'),index=False, mode='w', header=True, sep=',')
+        pts_matrix['coords'] = pts_matrix['coords'].str.split(';')
+        pts_matrix[['x', 'y', 'Long', 'Lat']] = pd.DataFrame(pts_matrix['coords'].tolist(), index=pts_matrix.index)
+        pts_matrix["x"] = pts_matrix.x.astype(float)
+        pts_matrix["y"] = pts_matrix.y.astype(float)
+        pts_matrix["Long"] = pts_matrix.Long.astype(float)
+        pts_matrix["Lat"] = pts_matrix.Lat.astype(float)
+
+        xs = np.asarray(pts_matrix['x'].to_numpy(dtype=float), dtype=float)
+        ys = np.asarray(pts_matrix['y'].to_numpy(dtype=float), dtype=float)
+        n_pts = len(pts_matrix)
+
+        shadow_dir = os.path.join(ProjectPath, 'Step_3')
+        tif_files = sorted(
+            os.path.join(shadow_dir, f) for f in os.listdir(shadow_dir)
+            if f.endswith('.tif') and 'fraction_on' not in f
+        )
         
-        feedback.setCurrentStep(4)
-        if feedback.isCanceled():
-            return {}
+        shadow_by_hour = {}
+        for tif in tif_files:
+            h = int(os.path.basename(tif).split('_')[2][:2])
+            ds = gdal.Open(tif)
+            band = ds.GetRasterBand(1)
+            arr = band.ReadAsArray()
+            nodata = band.GetNoDataValue()
+
+            inv_gt = gdal.InvGeoTransform(ds.GetGeoTransform())
+            cols = np.floor(inv_gt[0] + inv_gt[1] * xs + inv_gt[2] * ys).astype(int)
+            rows = np.floor(inv_gt[3] + inv_gt[4] * xs + inv_gt[5] * ys).astype(int)
+            inside = ((cols >= 0) & (cols < ds.RasterXSize) &
+                      (rows >= 0) & (rows < ds.RasterYSize))
+
+            vals = np.zeros(n_pts, dtype=float)
+            vals[inside] = arr[rows[inside], cols[inside]]
+            if nodata is not None:
+                vals[vals == nodata] = 0.0         
+            shadow_by_hour[h] = vals
+            ds = None
+            
+        zero = np.zeros(n_pts, dtype=float)
+        shadow_matrix = np.column_stack(
+            [shadow_by_hour.get(hh, zero) for hh in range(1, 25)])
+        pts_matrix['Shadow1'] = [tuple(float(v) for v in row) for row in shadow_matrix]
         
-        feedback.pushInfo('')
-        feedback.pushInfo('Preparing all data for temperature calculation...')
-        # Group all csv files and save id_list
-        for h in range (24):
-            temp=pd.read_csv(os.path.join(ProjectPath,'Step_4','Temp',str(h+1)+'.csv'),sep=',')
-            temp["hour"]=h+1
-            if h==0:
-                temp.to_csv(os.path.join(ProjectPath, 'Step_4', 'ComputedPoints.csv'),index=False, mode='w', header=True, sep=',')
-            else:
-                id_list=temp["id"].tolist()
-                temp.to_csv(os.path.join(ProjectPath, 'Step_4', 'ComputedPoints.csv'), index=False, mode='a', header=False, sep=',')
-            os.remove(os.path.join(ProjectPath,'Step_4','Temp',str(h+1)+'.csv'))
-        del temp
-        
-        #import all points to process
-        Pts_list=pd.read_csv(os.path.join(ProjectPath, 'Step_4', 'ComputedPoints.csv'), sep=',')
-        if Qgis.QGIS_VERSION_INT<31600:
-            Pts_list["Shadow1"]=Pts_list["Shadow_1"]
-        
-        #aggregate shadow information
-        pts_matrix=Pts_list.sort_values(by=["hour"]).groupby(by=["id"]).agg({'id':'first','x':'first','y':'first','Material':'first','alb': 'first', 'em': 'first', 'Cv': 'first', 'lambd': 'first', 'ep': 'first', 'kc': 'first', 'FixedTemp[degC]': 'first', 'Long': 'first','Lat': 'first','Shadow1':list})
-        pts_matrix['Shadow1'] = pts_matrix['Shadow1'].apply(lambda x: tuple(x))
         pts_matrix['key']=pts_matrix.Material.astype(str)+'-'+pts_matrix.Shadow1.astype(str)
+        pts_matrix = pts_matrix.set_index('id', drop=False)
 
         feedback.pushInfo('')
         feedback.pushInfo('Simplification of the problem...')
@@ -378,22 +328,22 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         dr=1+0.033*np.cos((2*np.pi/(365))*t) #Inverse relative distance Earth-Sun
         d=0.409*np.sin((2*np.pi/365)*t-1.39) #Solar declinaison
 
-        def Evapo(Tair,Gh,Ha, lat, alb ):
+        def Evapo(Tair,Gh,Ha, lat, alb, shadow ):
             ETO=[]
             th=[0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5,15.5,16.5,17.5,18.5,19.5,20.5,21.5,22.5,23.5]
             phi=(np.pi/180)*lat # Conversion of latitude in degrees to radian
             b=2*np.pi*(t-81)/364
             Sc= 0.1645*np.sin(2*b)-0.1255*np.cos(b)-0.025*np.sin(b)
             for i in range(0,24):
-                Tmean=Tair[i]-273.3
-                Rs=Gh[i]*0.0036
+                Tmean=Tair[i]-273.15
+                Rs=Gh[i]*shadow[i]*0.0036
                 Rns=(1-alb)*Rs
                 delta=4098*(0.6108*np.e**(17.27*Tmean/(Tmean+237.3)))/(Tmean+237.3)**2
                 DTjour=delta/(delta+gamma*(1+0.24*Vvent))
                 DTnuit=delta/(delta+gamma*(1+0.96*Vvent))
                 PTjour=gamma/(delta+gamma*(1+0.24*Vvent))
                 PTnuit=gamma/(delta+gamma*(1+0.96*Vvent))
-                TT=(37/(Tmean+273))*Vvent
+                TT=(37/(Tmean+273.15))*Vvent
                 
                 es=0.6108*np.e**((17.27*Tmean)/(Tmean+237.3)) 
                 Hum=Ha[i]
@@ -407,7 +357,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         
                     Ra=(12*(60)/np.pi)*0.0820*dr*((w2-w1)*np.sin(phi)*np.sin(d) + np.cos(phi)*np.cos(d)*(np.sin(w2)-np.sin(w1))) #extraterrestrial radiation
                     Rso=(0.75+(2*10**(-5))*alt)*Ra #Clear sky solar radiation (Rso)
-                    Rnl=sigma_h*( (Tmean+273.16)**(4) ) * (0.34 - 0.14 * np.sqrt(ea))*(1.35*(Rs/Rso)-0.35)
+                    Rnl=sigma_h*( (Tmean+273.15)**(4) ) * (0.34 - 0.14 * np.sqrt(ea))*(1.35*(Rs/Rso)-0.35)
                     Rn=Rns-Rnl
                     G=0.1*Rn
                     Rng=0.408*Rn-G
@@ -416,7 +366,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
                 else:
                     Ra=0
                     Rso=(0.75+(2*10**(-5))*alt)*Ra #Clear sky solar radiation (Rso)
-                    Rnl=sigma_h*( (Tmean+273.16)**(4) ) * (0.34 - 0.14 * np.sqrt(ea))*(1.35*0.8-0.35)
+                    Rnl=sigma_h*( (Tmean+273.15)**(4) ) * (0.34 - 0.14 * np.sqrt(ea))*(1.35*0.8-0.35)
                     Rn=Rns-Rnl
                     G=0.5*Rn
                     Rng=0.408*Rn-G
@@ -431,7 +381,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
                  
             return ETO
         
-        simplified["ETO"]= simplified.apply(lambda row: Evapo(row["Tair"],row["Gh"],row["Ha"], row["Lat"], row["alb"]),axis=1)
+        simplified["ETO"]= simplified.apply(lambda row: Evapo(row["Tair"],row["Gh"],row["Ha"], row["Lat"], row["alb"], row["Shadow1"]),axis=1)
 
         #thermal equilibrium equation
         def thermal_equation(x,A,B,C):

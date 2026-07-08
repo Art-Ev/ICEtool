@@ -37,11 +37,11 @@ ICEtoolPath = os.path.dirname(__file__)
 
 from .Scripts.Display_HELP_fr import DisplayHELPfr
 from .Scripts.Display_HELP_en import DisplayHELPen
+from .Scripts.Display_EPW import DisplayEPW
 from .Scripts.SeeEXAMPLE import SeeEXAMPLE
 from .Scripts.Create_Project import CreateProject
 from .Scripts.Step2_TreePoints import CreateRastersTreePoints
 from .Scripts.Step2_TreePoly import CreateRastersTreePoly
-from .Scripts.Step4_ComputeTemperatureCSV import ComputeGroundTemperatureCSV
 from .Scripts.Step4_ComputeTemperatureEPW import ComputeGroundTemperatureEPW
 from .Scripts.Step3_UMEPshadows import UMEP_shadows
 
@@ -57,11 +57,11 @@ class ICEtoolProvider(QgsProcessingProvider):
     def loadAlgorithms(self):
         self.addAlgorithm(DisplayHELPfr())
         self.addAlgorithm(DisplayHELPen())
+        self.addAlgorithm(DisplayEPW())
         self.addAlgorithm(SeeEXAMPLE())
         self.addAlgorithm(CreateProject())
         self.addAlgorithm(CreateRastersTreePoints())
         self.addAlgorithm(CreateRastersTreePoly())
-        self.addAlgorithm(ComputeGroundTemperatureCSV())
         self.addAlgorithm(ComputeGroundTemperatureEPW())
         self.addAlgorithm(UMEP_shadows())
 
