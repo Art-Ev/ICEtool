@@ -79,11 +79,12 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 <a href="https://www.insa-toulouse.fr/fr/index.html"><img style="float: right;" src="https://www.insa-toulouse.fr/wp-content/uploads/2022/10/Logo_INSAvilletoulouse-RVB-HD.png" width="140" title="INSA_T" /></a>
 <a href="https://www.lab-lmdc.fr/"><img style="float: right;" src="https://www.lab-lmdc.fr/wp-content/uploads/2021/06/logo-lmdc-2021-1024x469.png" width="180" title="LMDC" /></a>
 <a href="https://wiki.resilience-territoire.ademe.fr/wiki/ICEtool"><img style="float: right;" src="https://www.ademe.fr/wp-content/uploads/2022/06/logoademe2020_rvb.jpg" width="120" title="ADEME" /></a>
-<a href="https://www.nouvelle-aquitaine.fr/"><img style="float: right;" src="https://www.nouvelle-aquitaine.fr/themes/custom/naq_instit/img/logo-naq.svg" width="120" title="R_NA" /></a>
+<a href="https://www.nouvelle-aquitaine.fr/"><img style="float: right;" src="https://www.nouvelle-aquitaine.fr/themes/dsnaq/logo.svg" width="120" title="R_NA" /></a>
 </p>
 
 ## And finally, main contributors:
 - [Arthur Evrard](https://www.linkedin.com/in/artev/)
+- [Marion Bonhomme](https://www.linkedin.com/in/marion-bonhomme-32418586/)
 - [Marie Toubin](https://www.linkedin.com/in/marie-toubin-5259b188/)
 - [Antoine Derveaux](https://www.linkedin.com/in/antoine-derveaux-512174151/)
 - [Stéphanie Maalouf](https://www.linkedin.com/in/stephanie-maalouf/)
