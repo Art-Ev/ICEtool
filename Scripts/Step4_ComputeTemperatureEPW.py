@@ -6,9 +6,7 @@
  Last edited by: Arthur Evrard
  Repository:  https://github.com/Art-Ev/ICEtool
  Created:    2021-11-12 (Arthur Evrard)
- Updated:
-   2022-02-02   Fix Stefan - Boltzman constant
-   2022-09-22   Adding in ground & evapotranspiration calculation (merge Marceau L.'s work) 
+ Updated:   2026-07
  -----------------------------------------------------------------------------------------------------------
 """
 
@@ -19,6 +17,7 @@ from qgis.core import QgsProcessingParameterVectorLayer
 from qgis.core import QgsProcessingParameterNumber
 from qgis.core import QgsProcessingParameterDefinition
 from qgis.core import QgsProcessingParameterFile
+from qgis.core import QgsProcessingParameterDateTime
 from qgis.core import QgsProcessingContext
 from qgis.core import QgsProcessingParameterEnum
 from qgis.core import QgsProcessingUtils
@@ -42,9 +41,8 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         self.addParameter(QgsProcessingParameterVectorLayer('grounddescriptionlayer', 'Ground description layer', types=[QgsProcessing.TypeVectorPolygon], defaultValue='Ground'))
         self.addParameter(QgsProcessingParameterVectorLayer('buildingslayer', 'Buildings layer', types=[QgsProcessing.TypeVectorPolygon], defaultValue='Buildings'))
         self.addParameter(QgsProcessingParameterFile('weatherdataepw', 'Weather data (epw)', behavior=QgsProcessingParameterFile.File, fileFilter='EPW (*.epw)', defaultValue=os.path.join(QgsProject.instance().absolutePath(), 'Step_1', 'WeatherData.epw')))
-        self.addParameter(QgsProcessingParameterNumber('day', 'Day', type=QgsProcessingParameterNumber.Integer, minValue=1, maxValue=31, defaultValue=21))
-        self.addParameter(QgsProcessingParameterNumber('month', 'Month', type=QgsProcessingParameterNumber.Integer, minValue=1, maxValue=12, defaultValue=7))
-        self.addParameter(QgsProcessingParameterEnum('fuseau','Fuseau horaire', options=['UTC 0 Greenwich London, Lisbon, Abidjan','UTC -1 Azores, Cabo Verde','UTC -2','UTC-3 Greenland, Brasilia, Buenos Aires','UTC-4 Santiago, Caracas, La Paz','UTC-5 Montreal, New York, Lima, Havana','UTC-6 Chicago, Mexico, Dallas','UTC-7 Denver, Edmonton','UTC-8 Los Angeles, Vancouver',
+        self.addParameter(QgsProcessingParameterDateTime('Date', 'Date', type=QgsProcessingParameterDateTime.Date))
+        self.addParameter(QgsProcessingParameterEnum('fuseau','Time zone', options=['UTC 0 Greenwich London, Lisbon, Abidjan','UTC -1 Azores, Cabo Verde','UTC -2','UTC-3 Greenland, Brasilia, Buenos Aires','UTC-4 Santiago, Caracas, La Paz','UTC-5 Montreal, New York, Lima, Havana','UTC-6 Chicago, Mexico, Dallas','UTC-7 Denver, Edmonton','UTC-8 Los Angeles, Vancouver',
                                                      'UTC-9 Alaska','UTC-10 French Polynesia, Hawai','UTC-11 Tonga','UTC-12 _ + 12 Auckland, Fiji, Marchall Islands','UTC + 11 New Caledonia, Solomon Island','UTC +10 Sydney, Melbourne','UTC + 9 Tokyo, Seoul, Center Australia','UTC +8 Beijing, Hong Kong, West Australia','UTC + 7 Thailand, Vietnam','UTC + 6 Nur-Sultan, Bangladesh','UTC + 5 Ouzbekistan, Pakistan, New Dehli','UTC + 4 Teheran, Oman','UTC + 3 Moscou, Istanbul, Nairobi','UTC + 2 Kiev, Le Caire, Le Cap','UTC + 1 Berlin, Paris, Madrid, Alger'], allowMultiple=False, defaultValue=23))
         param = QgsProcessingParameterNumber('altitude', 'Altitude (meters)', type=QgsProcessingParameterNumber.Integer, minValue=0, maxValue=10000, defaultValue=100)
         param.setFlags(param.flags() | QgsProcessingParameterDefinition.FlagAdvanced)
@@ -63,8 +61,8 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         FilePath=os.path.dirname(__file__)
         SCR = self.parameterAsVectorLayer(parameters, 'grounddescriptionlayer', context).crs().authid()
         
-        day=parameters['day']
-        month=parameters['month']
+        day=parameters['Date'].day()
+        month=parameters['Date'].month()
         alt=parameters['altitude']
         fuseau=parameters['fuseau']
         fuseau_list=pd.read_csv(os.path.join(FilePath,'Fuseaux_horaires.csv'), sep=';')
@@ -132,7 +130,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         if feedback.isCanceled():
             return {}
 
-        # Extraire par localisation
+        # Extract by location
         alg_params = {
             'INPUT': outputs['Spatial_index_2']['OUTPUT'],
             'INTERSECT': parameters['buildingslayer'],
@@ -234,6 +232,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
 
         feedback.pushInfo('')
         feedback.pushInfo('Simplification of the problem...')
+        
         #Simplification of the problem
         simplified=pts_matrix.groupby(by=["key"]).agg({'key':'first', 'id':'first','alb': 'first', 'em': 'first', 'Cv': 'first', 'lambd': 'first', 'ep': 'first', 'kc': 'first', 'FixedTemp[degC]': 'first', 'Long': 'first', 'Lat': 'first', 'Shadow1':'first'})
 
@@ -247,7 +246,7 @@ class ComputeGroundTemperatureEPW(QgsProcessingAlgorithm):
         names=['Year', 'month','day', 'hour','Minute','Data Source and Uncertainty Flags','Dry Bulb Temperature [DegC]','Dew Point Temperature','Relative Humidity','Atmospheric Station Pressure','Extraterrestrial Horizontal Radiation','Extraterrestrial Direct Normal Radiation','Horizontal Infrared Radiation Intensity','Global Horizontal Radiation [Wh/m2]','Direct Normal Radiation','Diffuse Horizontal Radiation','Global Horizontal Illuminance','Direct Normal Illuminance','Diffuse Horizontal Illuminance','Zenith Luminance','Wind Direction','Wind Speed','Total Sky Cover','Opaque Sky Cover','Visibility','Ceiling Height','Present Weather Observation','Present Weather Codes','Precipitable Water','Aerosol Optical Depth','Snow Depth','Days Since Last Snowfall','Albedo','Liquid Precipitation Depth','Liquid Precipitation Quantity']
         WeatherData=pd.read_csv(parameters['weatherdataepw'], skiprows=first_row, header=None, names=names)
 
-        #Emprical Fuentes correlation (1987), to replace in future versions with better approximation
+        #Empirical Fuentes correlation (1987), to replace in future versions with better approximation
         WeatherData["Tsky"]=round((0.037536*(WeatherData["Dry Bulb Temperature [DegC]"]**1.5))+(0.32*WeatherData["Dry Bulb Temperature [DegC]"])+273.15,2)
 
         #Add weather data to simplified problem
