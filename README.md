@@ -8,7 +8,46 @@
 <a href="https://github.com/Art-Ev/ICEtool/blob/main/LICENSE"> <img src="https://img.shields.io/badge/licence-GPL 3.0-green" /></a>
 </p>
 
-# Presentation
+<div align="center">
+<img src="https://github.com/Art-Ev/ICEtool/blob/main/Icons/icon.png" width="110" height="83" title="example" />
+
+[Présentation & actualités (FR)](#présentation),
+[Project overview (EN)](#project-overview),
+[Sponsors](#sponsors),
+[Main contributors](#main-contributors)
+</div>
+
+---
+
+## Présentation
+**ICEtool** est un plugin open-source pour QGIS dédié à la simulation et à l'évaluation des îlots de chaleur urbains (ICU). 
+
+L'outil a été initialement créé et développé bénévolement par **Arthur Evrard** (ingénieur-enseignant) à partir de la méthode ICE. Sa conception répond à une triple vocation :
+1. **Pédagogique & Enseignement :** Servir de support de sensibilisation et de formation pour les étudiants (notamment dans le cadre de cours à l'**INSA de Toulouse**).
+2. **Bien Commun & Accessibilité :** Offrir un outil gratuit et transparent aux **collectivités territoriales** pour guider leurs politiques d'aménagement face au changement climatique.
+3. **Usage Professionnel :** Mettre à disposition de l'ensemble des **bureaux d'études** (dont Egis, employeur de l'auteur) un levier d'action opérationnel.
+
+### Évolutions & Dynamique de Recherche
+
+Le projet évolue en continu (bénévolement et maintenant aussi grâce au soutien de ses [Sponsors](#sponsors))pour améliorer l'outil autour de 4 axes :
+* Expérience utilisateurs
+* Prise en compte de nouveaux phénomènes (en conservant la philosophie de l'outil) 
+* Calibration pour affiner et garantir la qualité des résultats
+* Bases de données (notamment matériaux) livrées avec ICEtool
+
+### 🌟 Version Actuelle (Mise à jour "Été 2026")
+La version **2026.7.2** intègre désormais :
+* La modélisation fine d'objets anthropiques et d'ombrages structurants (protections solaires des bâtiments, arrêts de bus, panneaux photovoltaïques).
+* La prise en compte d'**essences d'arbres distinctes** au sein des simulations.
+
+### 🔬 Travaux de R&D en cours
+Soutenus et cofinancés par des acteurs majeurs (**ADEME, Banque des Territoires, Région Nouvelle-Aquitaine, Egis**), les axes de recherche actuels portent sur :
+* **Microclimat & Végétation :** Une modélisation approfondie et fine de l'évapotranspiration des arbres, notamment afin de différencier les différentes essences
+* **Indicateur de Confort Thermique & Étalonnage :** Une thèse dédiée à la création d'un indicateur de ressenti humain dans l'espace public, couplée à la calibration des modèles thermiques via des campagnes d'expérimentation (voir [l'article de la Caisse des Dépôts](https://caissedesdepots.fr)).
+* **Physique des Matériaux :** La caractérisation thermo-radiative de nouveaux revêtements urbains innovants et leur intégration native dans l'outil, menée dans le cadre du projet de recherche [ICEtool+ avec le LRA de l'ENSA Toulouse](https://archi.fr).
+
+---
+## Project overview
 
 ICEtool is an all in one QGIS plugin to easily compute ground temperatures in an urban environment. <br>
 This allows you to make and highlight the urban design choices (e.g. vegetation, materials) that reduce urban heat island phenomena.
@@ -73,7 +112,9 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 </a>
 </p>
 
-## they support ICEtool (in many ways) and thanks for that!
+---
+
+## Sponsors
 <p align="center">
 <a href="https://www.egis-group.com/sectors/cities"><img style="float: right;" src="https://upload.wikimedia.org/wikipedia/fr/5/5b/Logo-egis.gif" width="200" title="Egis" /></a>
 <a href="https://www.insa-toulouse.fr/fr/index.html"><img style="float: right;" src="https://www.insa-toulouse.fr/wp-content/uploads/2022/10/Logo_INSAvilletoulouse-RVB-HD.png" width="140" title="INSA_T" /></a>
@@ -82,7 +123,9 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 <a href="https://www.nouvelle-aquitaine.fr/"><img style="float: right;" src="https://www.nouvelle-aquitaine.fr/themes/dsnaq/logo.svg" width="120" title="R_NA" /></a>
 </p>
 
-## And finally, main contributors:
+---
+
+## Main contributors:
 - [Arthur Evrard](https://www.linkedin.com/in/artev/)
 - [Marion Bonhomme](https://www.linkedin.com/in/marion-bonhomme-32418586/)
 - [Marie Toubin](https://www.linkedin.com/in/marie-toubin-5259b188/)
