@@ -46,11 +46,41 @@ Soutenus et cofinancés par des acteurs majeurs (**ADEME, Banque des Territoires
 * **Indicateur de Confort Thermique & Étalonnage :** Une thèse dédiée à la création d'un indicateur de ressenti humain dans l'espace public, couplée à la calibration des modèles thermiques via des campagnes d'expérimentation (voir [l'article de la Caisse des Dépôts](https://caissedesdepots.fr)).
 * **Physique des Matériaux :** La caractérisation thermo-radiative de nouveaux revêtements urbains innovants et leur intégration native dans l'outil, menée dans le cadre du projet de recherche [ICEtool+ avec le LRA de l'ENSA Toulouse](https://archi.fr).
 
+## Genèse & gouvernance du projet
+
+### 1. La genèse : une démarche interne Egis (la procédure "ICE")
+L'origine du projet repose sur des travaux internes menés au sein d'**[Egis](https://www.egis-group.com/fr/activites/icetool)** (et sa filiale **[Elioth](https://elioth.com/dice-a-icetool-licu-simplifie/)**), avec pour objectif de créer une méthodologie interne — la [procédure "ICE"](https://gitlab.com/elioth/ice) — pour quantifier les îlots de chaleur urbains et guider les projets d'aménagement.
+Ces premiers travaux ont été menés avec **Stéphanie Maalouf**, **Guillaume Meunier**, **Olivier Ledru** & **Arthur Evrard** pour poser les bases physiques et méthodologiques de l'outil.
+
+### 2. Le pivot open-source : un engagement bénévole (ICEtool v1)
+Afin de rendre ces travaux accessibles à toutes les collectivités, urbanistes & établissements d'enseignement, le projet a été repris sous la forme d'un plugin QGIS :
+* **Développement bénévole et individuel d'Arthur Evrard**
+* **Réécriture complète du code**, optimisation drastique, correction et refonte des algorithmes de calcul, et création d'une interface graphique ergonomique — donnant naissance à la première version publique d'**ICEtool**.
+
+### 3. L'écosystème actuel : un modèle mixte et partenarial
+Aujourd'hui, ICEtool évolue grâce à une dynamique mixte combinant temps bénévole, professionnel, recherche publique et contributions institutionnelles :
+* **Egis & Elioth :** continuent de soutenir l'outil, de l'intégrer dans leurs démarches d'innovation urbaine et d'alimenter les retours d'expérience du monde professionnel.
+* **INSA Toulouse (& laboratoire LMDC) :** agit comme sponsor académique. En tant qu'enseignant à l'INSA, Arthur des travaux d'étudiants qui participent aux mises à jour du plugin.
+* **ADEME :** valorise et valide la pertinence de l'outil à travers la publication de dossiers et de guides méthodologiques nationaux sur la résilience thermique des villes
+* **Banque des Territoires & Région Nouvelle-Aquitaine :** cofinancent les travaux de R&D en cours.
+
+ICEtool est donc un véritable projet de recherche appliquée maintenu par Arthur Evrard, soutenu par Egis, et propulsé en open-source grâce au soutien de sponsors comme l'INSA Toulouse, l'ADEME ou la Banque de Territoires.
+
 ---
 ## Project overview
 
 ICEtool is an all in one QGIS plugin to easily compute ground temperatures in an urban environment. <br>
 This allows you to make and highlight the urban design choices (e.g. vegetation, materials) that reduce urban heat island phenomena.
+
+## History & authorship
+
+**ICEtool was created by Arthur Evrard**, engineer at Egis and lecturer at INSA Toulouse. He combines the roles of **initial designer, lead developer and long-term maintainer** of the tool.
+
+1. **Origins — the internal "ICE" procedure at Egis.** The project originates from internal R&D work carried out within Egis (including its subsidiary Elioth) to quantify urban heat islands and guide urban design projects. the initial team has establish the physical and methodological foundation.
+2. **The open-source pivot (ICEtool v1).** To make this work accessible to all local authorities and urban planners, Arthur Evrard developed the QGIS plugin **on a volunteer, individual basis**: the code was completely rewritten, the algorithms corrected, redesigned and drastically optimized, and a user-friendly graphical interface was created.
+3. **Today — a mixed, partnership-based ecosystem.** Egis and Elioth keep supporting the tool and feeding back field experience; INSA Toulouse (with the LMDC laboratory) acts as official academic sponsor, with student research supervised by Arthur Evrard directly contributing to updates; ADEME recognizes and scientifically validates the tool through national methodological guides on urban thermal resilience; Banque des Territoires and Région Nouvelle-Aquitaine co-fund ongoing R&D.
+
+ICEtool is therefore an applied-research project supported by Arthur, his employer Egis, and released as open source with the academic backing of INSA Toulouse and sponsors.
 
 **To install ICEtool: simply use the plugin manager directly into QGIS** (there is nothing to download, QGIS will take care of everything)
 
@@ -130,6 +160,7 @@ You have absolutely no idea how ICEtool works but you would like to know so you 
 - [Marion Bonhomme](https://www.linkedin.com/in/marion-bonhomme-32418586/)
 - [Marie Toubin](https://www.linkedin.com/in/marie-toubin-5259b188/)
 - [Antoine Derveaux](https://www.linkedin.com/in/antoine-derveaux-512174151/)
+- [Lisa-Marie Coelho](https://www.linkedin.com/in/lisa-marie-coelho-a0701124b/)
 - [Stéphanie Maalouf](https://www.linkedin.com/in/stephanie-maalouf/)
 - [Marceau Leymarie](https://www.linkedin.com/in/marceau-leymarie-666b671b5/)
 - [Florian Guelfi](https://www.linkedin.com/in/florian-guelfi-865404bb/)
