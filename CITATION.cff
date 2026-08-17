@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use ICEtool, please cite it as below."
+title: "ICEtool: a QGIS plugin to compute ground temperatures and quantify urban heat islands"
+type: software
+authors:
+  - family-names: "Evrard"
+    given-names: "Arthur"
+    affiliation: "Egis; INSA Toulouse"
+repository-code: "https://github.com/Art-Ev/ICEtool"
+url: "https://github.com/Art-Ev/ICEtool"
+license: GPL-3.0
+version: "2026.7.2"
+keywords:
+  - QGIS
+  - urban heat island
+  - UHI
+  - ilot de chaleur urbain
+  - ground temperature
+  - urban planning
+  - thermal resilience
+abstract: >-
+  ICEtool is an open-source QGIS plugin created and maintained by Arthur Evrard
+  (engineer at Egis, lecturer at INSA Toulouse) to estimate ground temperatures
+  in urban environments and quantify urban heat island effects. It originates
+  from the "ICE" procedure developed within Egis & co-authored by Arthur.
+  ICEtool is an applied-research project supported by Arthur, Egis and released 
+  as open source with the academic backing of INSA Toulouse and sponsors (ADEME,
+  Banque des Territoires, Region Nouvelle-Aquitaine...).
