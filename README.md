@@ -25,7 +25,7 @@
 L'outil a été initialement créé et développé bénévolement par **Arthur Evrard** (ingénieur-enseignant). Sa conception répond à une triple vocation :
 1. **Pédagogique & Enseignement :** Servir de support de sensibilisation et de formation pour les étudiants (notamment dans le cadre de cours à l'**INSA de Toulouse**).
 2. **Bien Commun & Accessibilité :** Offrir un outil gratuit et transparent aux **collectivités territoriales** pour guider leurs politiques d'aménagement face au changement climatique.
-3. **Usage Professionnel :** Mettre à disposition de l'ensemble des **bureaux d'études** (dont Egis, employeur de l'auteur) un levier d'action opérationnel.
+3. **Usage Professionnel :** Mettre à disposition de l'ensemble des **bureaux d'études** (dont Egis) un levier d'action opérationnel.
 
 ### Évolutions & Dynamique de Recherche
 
