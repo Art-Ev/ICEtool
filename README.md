@@ -38,33 +38,33 @@ Le projet évolue en continu (bénévolement et maintenant aussi grâce au souti
 ### 🌟 Version Actuelle (Mise à jour "Été 2026")
 La version **2026.7.2** intègre désormais :
 * La modélisation fine d'objets anthropiques et d'ombrages structurants (protections solaires des bâtiments, arrêts de bus, panneaux photovoltaïques).
-* La prise en compte d'**essences d'arbres distinctes** au sein des simulations.
+* La prise en compte d'**essences d'arbres distinctes** au sein des simulations (réglage distinct des taux de transparence du feuillage).
 
 ### 🔬 Travaux de R&D en cours
-Soutenus et cofinancés par des acteurs majeurs (**ADEME, Banque des Territoires, Région Nouvelle-Aquitaine, Egis**), les axes de recherche actuels portent sur :
+Soutenus et cofinancés par différents acteurs (**ADEME, Banque des Territoires, Région Nouvelle-Aquitaine, Egis**), les axes de recherche actuels portent sur :
 * **Microclimat & Végétation :** Une modélisation approfondie et fine de l'évapotranspiration des arbres, notamment afin de différencier les différentes essences
 * **Indicateur de Confort Thermique & Étalonnage :** Une thèse dédiée à la création d'un indicateur de ressenti humain dans l'espace public, couplée à la calibration des modèles thermiques via des campagnes d'expérimentation (voir [l'article de la Caisse des Dépôts](https://caissedesdepots.fr)).
-* **Physique des Matériaux :** La caractérisation thermo-radiative de nouveaux revêtements urbains innovants et leur intégration native dans l'outil, menée dans le cadre du projet de recherche [ICEtool+ avec le LRA de l'ENSA Toulouse](https://archi.fr).
+* **Physique des Matériaux :** La caractérisation thermo-radiative de nouveaux revêtements urbains et leur intégration native dans l'outil, menée dans le cadre du projet de recherche [ICEtool+ avec le LRA de l'ENSA Toulouse](https://archi.fr).
 
 ## Genèse & gouvernance du projet
 
-### 1. La genèse : une démarche interne Egis (la procédure "ICE")
+### 1. Genèse : une démarche interne Egis (la procédure "ICE")
 L'origine du projet repose sur des travaux internes menés au sein d'**[Egis](https://www.egis-group.com/fr/activites/icetool)** (et sa filiale **[Elioth](https://elioth.com/dice-a-icetool-licu-simplifie/)**), avec pour objectif de créer une méthodologie interne — la [procédure "ICE"](https://gitlab.com/elioth/ice) — pour quantifier les îlots de chaleur urbains et guider les projets d'aménagement.
 Ces premiers travaux ont été menés avec **Stéphanie Maalouf**, **Guillaume Meunier**, **Olivier Ledru** & **Arthur Evrard** pour poser les bases physiques et méthodologiques de l'outil.
 
-### 2. Le pivot open-source : un engagement bénévole (ICEtool v1)
+### 2. Pivot open-source & un engagement bénévole (ICEtool v1)
 Afin de rendre ces travaux accessibles à toutes les collectivités, urbanistes & établissements d'enseignement, le projet a été repris sous la forme d'un plugin QGIS :
-* **Développement bénévole et individuel d'Arthur Evrard**
+* **Développement bénévole d'Arthur Evrard**
 * **Réécriture complète du code**, optimisation drastique, correction et refonte des algorithmes de calcul, et création d'une interface graphique ergonomique — donnant naissance à la première version publique d'**ICEtool**.
 
-### 3. L'écosystème actuel : un modèle mixte et partenarial
+### 3. Ecosystème actuel : un modèle mixte et partenarial
 Aujourd'hui, ICEtool évolue grâce à une dynamique mixte combinant temps bénévole, professionnel, recherche publique et contributions institutionnelles :
 * **Egis & Elioth :** continuent de soutenir l'outil, de l'intégrer dans leurs démarches d'innovation urbaine et d'alimenter les retours d'expérience du monde professionnel.
 * **INSA Toulouse (& laboratoire LMDC) :** agit comme sponsor académique. En tant qu'enseignant à l'INSA, Arthur des travaux d'étudiants qui participent aux mises à jour du plugin.
 * **ADEME :** valorise et valide la pertinence de l'outil à travers la publication de dossiers et de guides méthodologiques nationaux sur la résilience thermique des villes
 * **Banque des Territoires & Région Nouvelle-Aquitaine :** cofinancent les travaux de R&D en cours.
 
-ICEtool est donc un véritable projet de recherche appliquée maintenu par Arthur Evrard, soutenu par Egis, et propulsé en open-source grâce au soutien de sponsors comme l'INSA Toulouse, l'ADEME ou la Banque de Territoires.
+ICEtool est un projet de recherche appliquée maintenu par Arthur Evrard, soutenu par Egis, et partagé en open-source grâce au soutien de sponsors comme l'INSA Toulouse, l'ADEME ou la Banque de Territoires.
 
 ---
 ## Project overview
